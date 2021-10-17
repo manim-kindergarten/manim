@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../../_static/styles/default.css?28e782ba4c4b008d9694e853">
-    <link rel="stylesheet" href="../../../_static/pygments.css?28e782ba4c4b008d9694e853">
+    <link rel="stylesheet" href="../../../_static/styles/default.css?55b7c355bcdfb35f5fe75b3e">
+    <link rel="stylesheet" href="../../../_static/pygments.css?55b7c355bcdfb35f5fe75b3e">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
         <script src="../../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../../_static/scripts/main.js?28e782ba4c4b008d9694e853"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../../_static/scripts/main.js?55b7c355bcdfb35f5fe75b3e"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,9 +205,69 @@
 <h1>Dot Cloud<a class="headerlink" href="#dot-cloud" title="永久链接至标题">¶</a></h1>
 <section id="dotcloud">
 <h2>DotCloud<a class="headerlink" href="#dotcloud" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.types.dot_cloud.</code><code class="sig-name descname">DotCloud</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud" title="永久链接至目标">¶</a></dt>
+<dd><p>点云图</p>
+<p>传入一系列三维坐标，在这些坐标的位置生成点物件</p>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.compute_bounding_box">
+<code class="sig-name descname">compute_bounding_box</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.compute_bounding_box" title="永久链接至目标">¶</a></dt>
+<dd><p>计算包围框</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.get_radii">
+<code class="sig-name descname">get_radii</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.get_radii" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有点的半径</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.get_radius">
+<code class="sig-name descname">get_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.get_radius" title="永久链接至目标">¶</a></dt>
+<dd><p>获取点半径的最大值</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.get_shader_data">
+<code class="sig-name descname">get_shader_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.get_shader_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取 shader 数据</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.make_3d">
+<code class="sig-name descname">make_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gloss</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">shadow</span><span class="o">=</span><span class="default_value">0.2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.make_3d" title="永久链接至目标">¶</a></dt>
+<dd><p>给点集添加光泽</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.scale">
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale_factor</span></em>, <em class="sig-param"><span class="n">scale_radii</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.scale" title="永久链接至目标">¶</a></dt>
+<dd><p>点集大小，<code class="docutils literal notranslate"><span class="pre">scale_radii</span></code> 控制是否同时缩放每个点的大小</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.set_radii">
+<code class="sig-name descname">set_radii</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radii</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.set_radii" title="永久链接至目标">¶</a></dt>
+<dd><p>传入一个数组，逐一设置点的半径</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.set_radius">
+<code class="sig-name descname">set_radius</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.set_radius" title="永久链接至目标">¶</a></dt>
+<dd><p>传入一个数值，统一设置点的半径</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.types.dot_cloud.DotCloud.to_grid">
+<code class="sig-name descname">to_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_rows</span></em>, <em class="sig-param"><span class="n">n_cols</span></em>, <em class="sig-param"><span class="n">n_layers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">buff_ratio</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">h_buff_ratio</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">v_buff_ratio</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">d_buff_ratio</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.DotCloud.to_grid" title="永久链接至目标">¶</a></dt>
+<dd><p>重置点的数量为 <code class="docutils literal notranslate"><span class="pre">n_rows*n_cols*n_layers</span></code>，并将点按照 [行, 列, 层] 排列</p>
+</dd></dl>
+</dd></dl>
 </section>
 <section id="truedot">
 <h2>TrueDot<a class="headerlink" href="#truedot" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.types.dot_cloud.TrueDot">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.types.dot_cloud.</code><code class="sig-name descname">TrueDot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">array([0.0, 0.0, 0.0])</span></em>, <em class="sig-param"><span class="n">radius</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.types.dot_cloud.TrueDot" title="永久链接至目标">¶</a></dt>
+<dd><p>一个单点</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">center</span></code> : 点的中心</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code> : 点的半径</p></li>
+</ul>
+</dd></dl>
 </section>
 </section>
 

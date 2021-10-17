@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?45eb3f11dc67f7b1f2ea0533">
-    <link rel="stylesheet" href="../../_static/pygments.css?45eb3f11dc67f7b1f2ea0533">
+    <link rel="stylesheet" href="../../_static/styles/default.css?3159c89be6aa4f63e4ef0b98">
+    <link rel="stylesheet" href="../../_static/pygments.css?3159c89be6aa4f63e4ef0b98">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?45eb3f11dc67f7b1f2ea0533"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?3159c89be6aa4f63e4ef0b98"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,15 +205,60 @@
 <h1>ShapeMatchers<a class="headerlink" href="#shapematchers" title="永久链接至标题">¶</a></h1>
 <section id="surroundingrectangle">
 <h2>SurroundingRectangle<a class="headerlink" href="#surroundingrectangle" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.shape_matchers.SurroundingRectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.shape_matchers.</code><code class="sig-name descname">SurroundingRectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mobject</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.shape_matchers.SurroundingRectangle" title="永久链接至目标">¶</a></dt>
+<dd><p>包围矩形框</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buff</span></code> : 矩形框与被包含物件的间隙</p></li>
+</ul>
+</dd></dl>
 </section>
 <section id="backgroundrectangle">
 <h2>BackgroundRectangle<a class="headerlink" href="#backgroundrectangle" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.shape_matchers.BackgroundRectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.shape_matchers.</code><code class="sig-name descname">BackgroundRectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mobject</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.shape_matchers.BackgroundRectangle" title="永久链接至目标">¶</a></dt>
+<dd><p>背景矩形框</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buff</span></code> : 矩形框与被包含物件的间隙</p></li>
+</ul>
+<dl class="py method">
+<dt id="manimlib.mobject.shape_matchers.BackgroundRectangle.get_fill_color">
+<code class="sig-name descname">get_fill_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.shape_matchers.BackgroundRectangle.get_fill_color" title="永久链接至目标">¶</a></dt>
+<dd><p>获取填充色</p>
+<p>如果是渐变染色,则只会返回颜色列表的第一个</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.mobject.shape_matchers.BackgroundRectangle.pointwise_become_partial">
+<code class="sig-name descname">pointwise_become_partial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mobject</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.shape_matchers.BackgroundRectangle.pointwise_become_partial" title="永久链接至目标">¶</a></dt>
+<dd><p>返回 vmobject 上百分比从 a 到 b 的部分曲线的拷贝</p>
+</dd></dl>
+</dd></dl>
 </section>
 <section id="cross">
 <h2>Cross<a class="headerlink" href="#cross" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.shape_matchers.Cross">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.shape_matchers.</code><code class="sig-name descname">Cross</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mobject</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.shape_matchers.Cross" title="永久链接至目标">¶</a></dt>
+<dd><p>叉叉</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stroke_width</span></code> : 叉叉线宽，默认两端细中间粗</p></li>
+</ul>
+</dd></dl>
 </section>
 <section id="underline">
 <h2>Underline<a class="headerlink" href="#underline" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.shape_matchers.Underline">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.shape_matchers.</code><code class="sig-name descname">Underline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mobject</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.shape_matchers.Underline" title="永久链接至目标">¶</a></dt>
+<dd><p>下划线</p>
+<p>传入 <code class="docutils literal notranslate"><span class="pre">start,</span> <span class="pre">end</span></code> 为线段起点终点</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buff</span></code> : 为两端距离 <code class="docutils literal notranslate"><span class="pre">start,end</span></code> 的距离（默认为0）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path_arc</span></code> : 如果有此关键字参数，则使用 <code class="docutils literal notranslate"><span class="pre">ArcBetweemPoints</span></code>，<code class="docutils literal notranslate"><span class="pre">path_arc</span></code> 表示角度</p></li>
+</ul>
+</dd></dl>
 </section>
 </section>
 

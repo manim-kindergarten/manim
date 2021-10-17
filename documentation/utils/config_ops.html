@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?09f26935fe0981d2ddcfd947">
-    <link rel="stylesheet" href="../../_static/pygments.css?09f26935fe0981d2ddcfd947">
+    <link rel="stylesheet" href="../../_static/styles/default.css?bfe4c016746814922e6485c1">
+    <link rel="stylesheet" href="../../_static/pygments.css?bfe4c016746814922e6485c1">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?09f26935fe0981d2ddcfd947"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?bfe4c016746814922e6485c1"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,23 +205,59 @@
 <h1>CONFIG_ops<a class="headerlink" href="#config-ops" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">manimlib/utils/config_ops.py</span></code> 这个文件中主要实现了处理CONFIG字典和类的属性有关的函数</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.config_ops.get_all_descendent_classes">
+<code class="sig-prename descclassname">manimlib.utils.config_ops.</code><code class="sig-name descname">get_all_descendent_classes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Class</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.config_ops.get_all_descendent_classes" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>获取类 Class 的全部子类</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.config_ops.filtered_locals">
+<code class="sig-prename descclassname">manimlib.utils.config_ops.</code><code class="sig-name descname">filtered_locals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">caller_locals</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.config_ops.filtered_locals" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>将 caller_locals 字典中去掉 <code class="docutils literal notranslate"><span class="pre">self,</span> <span class="pre">kwargs</span></code> 两个键值对</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.config_ops.digest_config">
+<code class="sig-prename descclassname">manimlib.utils.config_ops.</code><code class="sig-name descname">digest_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">kwargs</span></em>, <em class="sig-param"><span class="n">caller_locals</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.config_ops.digest_config" title="永久链接至目标">¶</a></dt>
+<dd><p>Sets init args and CONFIG values as local variables</p>
+<p>The purpose of this function is to ensure that all
+configuration of any object is inheritable, able to
+be easily passed into instantiation, and is attached
+as an attribute of the object.</p>
+</dd></dl>
 <p>获取当前类和所有父类的 CONFIG 字典，转换为属性（优先级已经处理好）</p>
 <ul class="simple">
 <li><p>若要将当前所有局部变量也转化为属性，使用 <code class="docutils literal notranslate"><span class="pre">digest_config(self,</span> <span class="pre">kwargs,</span> <span class="pre">locals())</span></code></p></li>
 </ul>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.config_ops.merge_dicts_recursively">
+<code class="sig-prename descclassname">manimlib.utils.config_ops.</code><code class="sig-name descname">merge_dicts_recursively</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">dicts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.config_ops.merge_dicts_recursively" title="永久链接至目标">¶</a></dt>
+<dd><p>Creates a dict whose keyset is the union of all the
+input dictionaries.  The value for each key is based
+on the first dict in the list with that key.</p>
+<p>dicts later in the list have higher priority</p>
+<p>When values are dictionaries, it is applied recursively</p>
+</dd></dl>
 <div class="line-block">
 <div class="line">递归合并字典</div>
 <div class="line">创建一个字典，其键集是所有输入字典的并集，每个键的值都基于列表中带有该键的第一个字典</div>
 <div class="line">当值为字典时，将递归应用</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.config_ops.soft_dict_update">
+<code class="sig-prename descclassname">manimlib.utils.config_ops.</code><code class="sig-name descname">soft_dict_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d1</span></em>, <em class="sig-param"><span class="n">d2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.config_ops.soft_dict_update" title="永久链接至目标">¶</a></dt>
+<dd><p>Adds key values pairs of d2 to d1 only when d1 doesn’t
+already have that key</p>
+</dd></dl>
 <p>合并字典，仅当 d1 没有该键时，才将 d2 的键值对添加到d1中</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.config_ops.digest_locals">
+<code class="sig-prename descclassname">manimlib.utils.config_ops.</code><code class="sig-name descname">digest_locals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">keys</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.config_ops.digest_locals" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>把当前局部变量设为属性</p>
 </section>
 

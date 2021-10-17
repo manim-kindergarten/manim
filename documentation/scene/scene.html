@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?cb0454568b84606f734564cf">
-    <link rel="stylesheet" href="../../_static/pygments.css?cb0454568b84606f734564cf">
+    <link rel="stylesheet" href="../../_static/styles/default.css?34704882751a387d44010bf0">
+    <link rel="stylesheet" href="../../_static/pygments.css?34704882751a387d44010bf0">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?cb0454568b84606f734564cf"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?34704882751a387d44010bf0"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,6 +205,198 @@
 <h1>Scene<a class="headerlink" href="#scene" title="永久链接至标题">¶</a></h1>
 <section id="id1">
 <h2>Scene<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.scene.scene.Scene">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.scene.</code><code class="sig-name descname">Scene</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene" title="永久链接至目标">¶</a></dt>
+<dd><p>场景类</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window_config</span></code> : 窗口参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camera_config</span></code> : 相机参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_writer_config</span></code> : 文件写入参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start_at_animation_number</span></code> : 在某个动画开始播放</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end_at_animation_number</span></code> : 在某个动画结束播放</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preview</span></code> : 是否为预览</p></li>
+</ul>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">new_mobjects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add" title="永久链接至目标">¶</a></dt>
+<dd><p>将 Mobject 添加到场景中，后添加的会覆盖在上层</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.add_mobjects_among">
+<code class="sig-name descname">add_mobjects_among</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add_mobjects_among" title="永久链接至目标">¶</a></dt>
+<dd><p>This is meant mostly for quick prototyping,
+e.g. to add all mobjects defined up to a point,
+call self.add_mobjects_among(locals().values())</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.add_sound">
+<code class="sig-name descname">add_sound</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sound_file</span></em>, <em class="sig-param"><span class="n">time_offset</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">gain</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add_sound" title="永久链接至目标">¶</a></dt>
+<dd><p>添加声音</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.anims_from_play_args">
+<code class="sig-name descname">anims_from_play_args</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.anims_from_play_args" title="永久链接至目标">¶</a></dt>
+<dd><p>每个 arg 可以是一个 <strong>动画的实例</strong>，也可以是一个 <strong>mobject 的方法</strong>，后面的 kwargs
+即为这个方法所包含的参数，可以以字典的形式给出</p>
+<p>这一系列动画会通过参数列表 args 编译</p>
+<ul class="simple">
+<li><p>如果是 <strong>动画实例</strong>，则会直接添加到 <strong>动画列表</strong> 中</p></li>
+<li><dl class="simple">
+<dt>如果是一个 <strong>mobject 的方法</strong>，则会将它包装成 <code class="docutils literal notranslate"><span class="pre">MoveToTarget</span></code> 实例，其中的参数即为后面的字典或参数</dt><dd><ul>
+<li><p>直至读取到下一个动画实例，或是下一个 mobject 的方法之前，都是上面一个 <code class="docutils literal notranslate"><span class="pre">MoveToTarget</span></code> 的参数</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>或者采用 <a class="reference external" href="https://manim.community">ManimCommunity</a> 编写的 <code class="docutils literal notranslate"><span class="pre">Mobject.animate</span></code>
+方法，采用链式操作，将一连串方法编译成一个 <code class="docutils literal notranslate"><span class="pre">MoveToTarget</span></code>，详见 <a class="reference internal" href="../mobject/mobject.html#manimlib.mobject.mobject._AnimationBuilder" title="manimlib.mobject.mobject._AnimationBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">manimlib.mobject.mobject._AnimationBuilder</span></code></a></p></li>
+</ul>
+<p>一般我们采用 <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> 方法，而不是这个，因为 <code class="docutils literal notranslate"><span class="pre">play</span></code> 方法包装得更全面，而
+<code class="docutils literal notranslate"><span class="pre">anims_from_play_args</span></code> 这个方法只是 <code class="docutils literal notranslate"><span class="pre">play</span></code> 中的一部分</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.bring_to_back">
+<code class="sig-name descname">bring_to_back</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">mobjects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.bring_to_back" title="永久链接至目标">¶</a></dt>
+<dd><p>移动到下层</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.bring_to_front">
+<code class="sig-name descname">bring_to_front</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">mobjects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.bring_to_front" title="永久链接至目标">¶</a></dt>
+<dd><p>移动到最上层</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.clear" title="永久链接至目标">¶</a></dt>
+<dd><p>清空场景</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.construct">
+<code class="sig-name descname">construct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.construct" title="永久链接至目标">¶</a></dt>
+<dd><p>在此处写入所有动画，由子类重写</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.embed">
+<code class="sig-name descname">embed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.embed" title="永久链接至目标">¶</a></dt>
+<dd><p>使用 IPython 终端交互</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.get_animation_time_progression">
+<code class="sig-name descname">get_animation_time_progression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">animations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_animation_time_progression" title="永久链接至目标">¶</a></dt>
+<dd><p>获取动画进度条，在此过程中播放动画</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.get_mobject_copies">
+<code class="sig-name descname">get_mobject_copies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_mobject_copies" title="永久链接至目标">¶</a></dt>
+<dd><p>获取场景中物件的拷贝</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.get_mobjects">
+<code class="sig-name descname">get_mobjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_mobjects" title="永久链接至目标">¶</a></dt>
+<dd><p>获取场景中的物件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.get_time">
+<code class="sig-name descname">get_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_time" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前场景时间</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.get_wait_time_progression">
+<code class="sig-name descname">get_wait_time_progression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">duration</span></em>, <em class="sig-param"><span class="n">stop_condition</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_wait_time_progression" title="永久链接至目标">¶</a></dt>
+<dd><p>获取等待进度条，在此过程中播放等待动画</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.interact">
+<code class="sig-name descname">interact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.interact" title="永久链接至目标">¶</a></dt>
+<dd><p>交互</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_key_press">
+<code class="sig-name descname">on_key_press</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">modifiers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_key_press" title="永久链接至目标">¶</a></dt>
+<dd><p>键盘按下事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_key_release">
+<code class="sig-name descname">on_key_release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">modifiers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_key_release" title="永久链接至目标">¶</a></dt>
+<dd><p>键盘释放事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_mouse_drag">
+<code class="sig-name descname">on_mouse_drag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">d_point</span></em>, <em class="sig-param"><span class="n">buttons</span></em>, <em class="sig-param"><span class="n">modifiers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_mouse_drag" title="永久链接至目标">¶</a></dt>
+<dd><p>鼠标拖拽事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_mouse_motion">
+<code class="sig-name descname">on_mouse_motion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">d_point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_mouse_motion" title="永久链接至目标">¶</a></dt>
+<dd><p>鼠标移动事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_mouse_press">
+<code class="sig-name descname">on_mouse_press</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">button</span></em>, <em class="sig-param"><span class="n">mods</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_mouse_press" title="永久链接至目标">¶</a></dt>
+<dd><p>鼠标按下事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_mouse_release">
+<code class="sig-name descname">on_mouse_release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">button</span></em>, <em class="sig-param"><span class="n">mods</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_mouse_release" title="永久链接至目标">¶</a></dt>
+<dd><p>鼠标弹起事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_mouse_scroll">
+<code class="sig-name descname">on_mouse_scroll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_mouse_scroll" title="永久链接至目标">¶</a></dt>
+<dd><p>鼠标滚轮滚动事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.on_resize">
+<code class="sig-name descname">on_resize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.on_resize" title="永久链接至目标">¶</a></dt>
+<dd><p>窗口缩放事件</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.play">
+<code class="sig-name descname">play</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.play" title="永久链接至目标">¶</a></dt>
+<dd><p>播放动画</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.point_to_mobject">
+<code class="sig-name descname">point_to_mobject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">search_set</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buff</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.point_to_mobject" title="永久链接至目标">¶</a></dt>
+<dd><p>E.g. if clicking on the scene, this returns the top layer mobject
+under a given point</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">mobjects_to_remove</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>从场景中移除某个指定的 Mobject</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.restore">
+<code class="sig-name descname">restore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.restore" title="永久链接至目标">¶</a></dt>
+<dd><p>将场景恢复到保存的状态</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.run" title="永久链接至目标">¶</a></dt>
+<dd><p>场景运行</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.save_state">
+<code class="sig-name descname">save_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.save_state" title="永久链接至目标">¶</a></dt>
+<dd><p>保存场景当前状态</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.setup" title="永久链接至目标">¶</a></dt>
+<dd><p>在 <code class="docutils literal notranslate"><span class="pre">construct</span></code> 被调用前执行</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.tear_down">
+<code class="sig-name descname">tear_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.tear_down" title="永久链接至目标">¶</a></dt>
+<dd><p>销毁场景</p>
+</dd></dl>
+<dl class="py method">
+<dt id="manimlib.scene.scene.Scene.wait">
+<code class="sig-name descname">wait</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">duration</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">stop_condition</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.wait" title="永久链接至目标">¶</a></dt>
+<dd><p>等待一段时间</p>
+</dd></dl>
+</dd></dl>
 </section>
 </section>
 

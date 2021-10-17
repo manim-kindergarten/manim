@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?e74bb5df6f538994980c09cf">
-    <link rel="stylesheet" href="../../_static/pygments.css?e74bb5df6f538994980c09cf">
+    <link rel="stylesheet" href="../../_static/styles/default.css?5d7557898fb1d5ee08825753">
+    <link rel="stylesheet" href="../../_static/pygments.css?5d7557898fb1d5ee08825753">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?e74bb5df6f538994980c09cf"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?5d7557898fb1d5ee08825753"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,43 +205,118 @@
 <h1>Bezier<a class="headerlink" href="#bezier" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">manimlib/utils/bezier.py</span></code> 这个文件中主要实现了和贝塞尔曲线、插值有关的函数</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.bezier">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">bezier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.bezier" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <div class="line-block">
 <div class="line">返回由点集(锚点，控制点)确定的参数方程</div>
 <div class="line">贝塞尔曲线的次数由 points 中点的个数确定</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.partial_bezier_points">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">partial_bezier_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.partial_bezier_points" title="永久链接至目标">¶</a></dt>
+<dd><p>Given an list of points which define
+a bezier curve, and two numbers 0&lt;=a&lt;b&lt;=1,
+return an list of the same size, which
+describes the portion of the original bezier
+curve on the interval [a, b].</p>
+<p>This algorithm is pretty nifty, and pretty dense.</p>
+</dd></dl>
 <div class="line-block">
 <div class="line">给出贝塞尔曲线的点数组和两个 01 之间的数 ab</div>
 <div class="line">返回一个大小相同的数组，该数组描述原始贝塞尔曲线在间隔 [a,b] 上的部分</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.partial_quadratic_bezier_points">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">partial_quadratic_bezier_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.partial_quadratic_bezier_points" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <div class="line-block">
 <div class="line">给出二阶贝塞尔曲线的点数组和两个 01 之间的数 ab</div>
 <div class="line">返回一个大小相同的数组，该数组描述原始二阶贝塞尔曲线在间隔 [a,b] 上的部分</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.interpolate">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">interpolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.interpolate" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>线性插值</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.set_array_by_interpolation">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">set_array_by_interpolation</code><span class="sig-paren">(</span><em class="sig-param">arr</em>, <em class="sig-param">arr1</em>, <em class="sig-param">arr2</em>, <em class="sig-param">alpha</em>, <em class="sig-param">interp_func=&lt;function interpolate&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.set_array_by_interpolation" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>传入两个大小相同的数组，返回一个相同大小的数组，其中包含的元素为每个对应元素的插值</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.integer_interpolate">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">integer_interpolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.integer_interpolate" title="永久链接至目标">¶</a></dt>
+<dd><p>alpha is a float between 0 and 1.  This returns
+an integer between start and end (inclusive) representing
+appropriate interpolation between them, along with a
+“residue” representing a new proportion between the
+returned integer and the next one of the
+list.</p>
+<p>For example, if start=0, end=10, alpha=0.46, This
+would return (4, 0.6).</p>
+</dd></dl>
 <p>整数插值，返回两个数，第一个为插值结果(整数)，第二个为和线性插值相差的小数部分</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.mid">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">mid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.mid" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>返回 (start+end)/2，start 和 end 可以是任意类型</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.inverse_interpolate">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">inverse_interpolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.inverse_interpolate" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>由插值的结果 value，返回 alpha</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.match_interpolate">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">match_interpolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_start</span></em>, <em class="sig-param"><span class="n">new_end</span></em>, <em class="sig-param"><span class="n">old_start</span></em>, <em class="sig-param"><span class="n">old_end</span></em>, <em class="sig-param"><span class="n">old_value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.match_interpolate" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <div class="line-block">
 <div class="line">匹配插值，给出原插值范围 old_start, old_end 和结果 old_value</div>
 <div class="line">返回以相同比例，插值范围为 new_start, new_end 的插值结果</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.get_smooth_quadratic_bezier_handle_points">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">get_smooth_quadratic_bezier_handle_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.get_smooth_quadratic_bezier_handle_points" title="永久链接至目标">¶</a></dt>
+<dd><p>Figuring out which bezier curves most smoothly connect a sequence of points.</p>
+<p>Given three successive points, P0, P1 and P2, you can compute that by defining
+h = (1/4) P0 + P1 - (1/4)P2, the bezier curve defined by (P0, h, P1) will pass
+through the point P2.</p>
+<p>So for a given set of four successive points, P0, P1, P2, P3, if we want to add
+a handle point h between P1 and P2 so that the quadratic bezier (P1, h, P2) is
+part of a smooth curve passing through all four points, we calculate one solution
+for h that would produce a parbola passing through P3, call it smooth_to_right, and
+another that would produce a parabola passing through P0, call it smooth_to_left,
+and use the midpoint between the two.</p>
+</dd></dl>
 <p>给出一系列锚点 points，返回经过 points 的平滑贝塞尔曲线的一系列控制点</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.diag_to_matrix">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">diag_to_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l_and_u</span></em>, <em class="sig-param"><span class="n">diag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.diag_to_matrix" title="永久链接至目标">¶</a></dt>
+<dd><p>Converts array whose rows represent diagonal
+entries of a matrix into the matrix itself.
+See scipy.linalg.solve_banded</p>
+</dd></dl>
 <div class="line-block">
 <div class="line">用矩阵以对角线形式填充矩阵</div>
 <div class="line">l, u 为非零下上对角线数，diag 为将以对角线形式填充的矩阵</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.bezier.is_closed">
+<code class="sig-prename descclassname">manimlib.utils.bezier.</code><code class="sig-name descname">is_closed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.bezier.is_closed" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>检查曲线是否闭合(首尾锚点重合)</p>
 </section>
 

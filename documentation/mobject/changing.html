@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?1f20036d6918c5434dcf208d">
-    <link rel="stylesheet" href="../../_static/pygments.css?1f20036d6918c5434dcf208d">
+    <link rel="stylesheet" href="../../_static/styles/default.css?94168c5703c1e5aad81248b7">
+    <link rel="stylesheet" href="../../_static/pygments.css?94168c5703c1e5aad81248b7">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?1f20036d6918c5434dcf208d"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?94168c5703c1e5aad81248b7"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,12 +205,45 @@
 <h1>Changing<a class="headerlink" href="#changing" title="永久链接至标题">¶</a></h1>
 <section id="animatedboundary">
 <h2>AnimatedBoundary<a class="headerlink" href="#animatedboundary" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.changing.AnimatedBoundary">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.changing.</code><code class="sig-name descname">AnimatedBoundary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vmobject</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.changing.AnimatedBoundary" title="永久链接至目标">¶</a></dt>
+<dd><p>动态变化的边界</p>
+<p>传入需要显示动态边界的物体 <code class="docutils literal notranslate"><span class="pre">vmobject</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">colors</span></code> 表示变化中出现的颜色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_stroke_width</span></code> 表示边界最大的粗细</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cycle_rate</span></code> 表示循环率</p></li>
+</ul>
+</dd></dl>
 </section>
 <section id="tracedpath">
 <h2>TracedPath<a class="headerlink" href="#tracedpath" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.changing.TracedPath">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.changing.</code><code class="sig-name descname">TracedPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">traced_point_func</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.changing.TracedPath" title="永久链接至目标">¶</a></dt>
+<dd><p>记录路径的 VMobject</p>
+<p>传入一个可调用的对象 <code class="docutils literal notranslate"><span class="pre">traced_point_func</span></code> (一般为 <code class="docutils literal notranslate"><span class="pre">mob.get_center()</span></code> )</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min_distance_to_new_point</span></code> : 两点之间的最小距离，若小于此距离则不增加点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_traced</span></code> : 追踪时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_per_anchor</span></code> : 采样时间间隔</p></li>
+</ul>
+</dd></dl>
 </section>
 <section id="tracingtail">
 <h2>TracingTail<a class="headerlink" href="#tracingtail" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.changing.TracingTail">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.changing.</code><code class="sig-name descname">TracingTail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mobject_or_func</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.changing.TracingTail" title="永久链接至目标">¶</a></dt>
+<dd><p>自动减淡的轨迹</p>
+<p>传入一个可调用的对象 <code class="docutils literal notranslate"><span class="pre">traced_point_func</span></code> (一般为 <code class="docutils literal notranslate"><span class="pre">mob.get_center()</span></code> )</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min_distance_to_new_point</span></code> : 两点之间的最小距离，若小于此距离则不增加点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_traced</span></code> : 追踪时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_per_anchor</span></code> : 采样时间间隔</p></li>
+</ul>
+</dd></dl>
 </section>
 </section>
 

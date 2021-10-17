@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?c3e8748c9a1d6b9b86d89834">
-    <link rel="stylesheet" href="../../_static/pygments.css?c3e8748c9a1d6b9b86d89834">
+    <link rel="stylesheet" href="../../_static/styles/default.css?44ef5dcb34552302aaa123b9">
+    <link rel="stylesheet" href="../../_static/pygments.css?44ef5dcb34552302aaa123b9">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?c3e8748c9a1d6b9b86d89834"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?44ef5dcb34552302aaa123b9"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -205,24 +205,65 @@
 <h1>Iterables<a class="headerlink" href="#iterables" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">manimlib/utils/iterables.py</span></code> 这个文件中主要实现了和列表字典处理有关的函数</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.remove_list_redundancies">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">remove_list_redundancies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.remove_list_redundancies" title="永久链接至目标">¶</a></dt>
+<dd><p>Used instead of list(set(l)) to maintain order
+Keeps the last occurrence of each element</p>
+</dd></dl>
 <p>对列表 l 去重，保留重复元素最后一次出现</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.list_update">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">list_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l1</span></em>, <em class="sig-param"><span class="n">l2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.list_update" title="永久链接至目标">¶</a></dt>
+<dd><p>Used instead of list(set(l1).update(l2)) to maintain order,
+making sure duplicates are removed from l1, not l2.</p>
+</dd></dl>
 <p>从 l1 中删除 l2 中重复项，再与 l2 合并</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.list_difference_update">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">list_difference_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l1</span></em>, <em class="sig-param"><span class="n">l2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.list_difference_update" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>返回两列表中不同的项的列表</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.all_elements_are_instances">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">all_elements_are_instances</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span></em>, <em class="sig-param"><span class="n">Class</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.all_elements_are_instances" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>iterable 列表中的所有元素是否都为Class类</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.adjacent_n_tuples">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">adjacent_n_tuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">objects</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.adjacent_n_tuples" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>objects 的相邻 n 元组（返回zip）</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.adjacent_pairs">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">adjacent_pairs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.adjacent_pairs" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>objects 相邻对</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.batch_by_property">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">batch_by_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">items</span></em>, <em class="sig-param"><span class="n">property_func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.batch_by_property" title="永久链接至目标">¶</a></dt>
+<dd><p>Takes in a list, and returns a list of tuples, (batch, prop)
+such that all items in a batch have the same output when
+put into property_func, and such that chaining all these
+batches together would give the original list (i.e. order is
+preserved)</p>
+</dd></dl>
 <div class="line-block">
 <div class="line">输入一个列表，返回一个元组列表（batch，prop）</div>
 <div class="line">这样一个批中的所有项在放入 property_func 时都具有相同的输出</div>
 <div class="line">并且将所有这些批链接在一起将得到原始列表（即保留顺序）</div>
 </div>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.listify">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">listify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.listify" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>根据 obj 返回列表</p>
 <ul class="simple">
 <li><p>若 obj 为 str 类型，返回 [obj]</p></li>
@@ -230,6 +271,10 @@
 <li><p>若报错，返回 [obj]</p></li>
 </ul>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.resize_array">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">resize_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nparray</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.resize_array" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>重置数组长度</p>
 <ul class="simple">
 <li><p>若长度变短，则截断为前半部分元素</p></li>
@@ -237,6 +282,10 @@
 <li><p>若长度变长，则循环拷贝</p></li>
 </ul>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.resize_preserving_order">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">resize_preserving_order</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nparray</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.resize_preserving_order" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>重置数组长度，但保留原有的序列</p>
 <ul class="simple">
 <li><p>若长度为 0，则返回 0 数组</p></li>
@@ -245,14 +294,34 @@
 <li><p>若长度变长，则类似 [1,2,3] 变为 [1,1,2,2,3,3]</p></li>
 </ul>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.resize_with_interpolation">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">resize_with_interpolation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nparray</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.resize_with_interpolation" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>重置数组长度，并对中间元素进行线性插值，插值起止点分别为数组的首尾元素</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.make_even">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">make_even</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable_1</span></em>, <em class="sig-param"><span class="n">iterable_2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.make_even" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>将 iterable_1 和 iterable_2 调成一样的长度，不足的伸缩调整</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.make_even_by_cycling">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">make_even_by_cycling</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable_1</span></em>, <em class="sig-param"><span class="n">iterable_2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.make_even_by_cycling" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>将 iterable_1 和 iterable_2 调成一样的长度，不足的循环使用</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.remove_nones">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">remove_nones</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sequence</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.remove_nones" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>将 sequence 中的 None 去除掉，并返回</p>
 <hr class="docutils"/>
+<dl class="py function">
+<dt id="manimlib.utils.iterables.concatenate_lists">
+<code class="sig-prename descclassname">manimlib.utils.iterables.</code><code class="sig-name descname">concatenate_lists</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">list_of_lists</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.utils.iterables.concatenate_lists" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
 <p>串联列表 list_of</p>
 </section>
 

@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../_static/styles/default.css?3567e0987fc07eccb6d0d1da">
-    <link rel="stylesheet" href="../_static/pygments.css?3567e0987fc07eccb6d0d1da">
+    <link rel="stylesheet" href="../_static/styles/default.css?039afa57a72a4f7d691f83cd">
+    <link rel="stylesheet" href="../_static/pygments.css?039afa57a72a4f7d691f83cd">
     
 <style>
   :root {
@@ -29,7 +29,7 @@
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../_static/scripts/main.js?3567e0987fc07eccb6d0d1da"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../_static/scripts/main.js?039afa57a72a4f7d691f83cd"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -208,8 +208,8 @@
 <section id="bug">
 <h3>Bug修复<a class="headerlink" href="#bug" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><p>修复了当 <code class="docutils literal notranslate"><span class="pre">length=0</span></code> 时 <code class="xref py py-func docutils literal notranslate"><span class="pre">resize_with_interpolation()</span></code> 的bug</p></li>
-<li><p>修复了 <code class="xref py py-class docutils literal notranslate"><span class="pre">Elbow</span></code> 中 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的错误用法</p></li>
+<li><p>修复了当 <code class="docutils literal notranslate"><span class="pre">length=0</span></code> 时 <a class="reference internal" href="../documentation/utils/iterables.html#manimlib.utils.iterables.resize_with_interpolation" title="manimlib.utils.iterables.resize_with_interpolation"><code class="xref py py-func docutils literal notranslate"><span class="pre">resize_with_interpolation()</span></code></a> 的bug</p></li>
+<li><p>修复了 <a class="reference internal" href="../documentation/mobject/geometry.html#manimlib.mobject.geometry.Elbow" title="manimlib.mobject.geometry.Elbow"><code class="xref py py-class docutils literal notranslate"><span class="pre">Elbow</span></code></a> 中 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的错误用法</p></li>
 <li><p>无法选择显示器时使用存在的显示器</p></li>
 <li><p>确保 <code class="docutils literal notranslate"><span class="pre">mobject.data</span></code> 在每个动画结束后锁定</p></li>
 <li><p>修复了中心不在原点的向量场出现的bug</p></li>
@@ -228,8 +228,8 @@
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_all_ranges()</span></code></p></li>
 </ul>
 </li>
-<li><p>新增了 <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_color_by_rgba_func()</span></code></p></li>
-<li><p>更新了 <code class="xref py py-class docutils literal notranslate"><span class="pre">VectorField</span></code> 和 <code class="xref py py-class docutils literal notranslate"><span class="pre">StreamLines</span></code></p></li>
+<li><p>新增了 <a class="reference internal" href="../documentation/mobject/mobject.html#manimlib.mobject.mobject.Mobject.set_color_by_rgba_func" title="manimlib.mobject.mobject.Mobject.set_color_by_rgba_func"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_color_by_rgba_func()</span></code></a></p></li>
+<li><p>更新了 <a class="reference internal" href="../documentation/mobject/vector_field.html#manimlib.mobject.vector_field.VectorField" title="manimlib.mobject.vector_field.VectorField"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorField</span></code></a> 和 <a class="reference internal" href="../documentation/mobject/vector_field.html#manimlib.mobject.vector_field.StreamLines" title="manimlib.mobject.vector_field.StreamLines"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamLines</span></code></a></p></li>
 <li><p>允许 <code class="docutils literal notranslate"><span class="pre">3b1b_colormap</span></code> 作为 <code class="xref py py-func docutils literal notranslate"><span class="pre">get_colormap_list()</span></code> 的一个选项</p></li>
 <li><p>使 <code class="docutils literal notranslate"><span class="pre">stroke_width</span></code> 返回一个一维数组（支持可变线宽）</p></li>
 <li><p>新增了 <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_parts_by_text()</span></code></p></li>
@@ -237,8 +237,8 @@
 <li><p>更新 <code class="docutils literal notranslate"><span class="pre">Cross</span></code> 默认使用可变线宽</p></li>
 <li><p>新增了 <code class="xref py py-class docutils literal notranslate"><span class="pre">FlashAround</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">FlashUnder</span></code></p></li>
 <li><p>允许向 <code class="docutils literal notranslate"><span class="pre">Brace.get_text</span></code> 中传入 <code class="docutils literal notranslate"><span class="pre">Text</span></code> 的配置</p></li>
-<li><p>新增了 <code class="xref py py-meth docutils literal notranslate"><span class="pre">reorient()</span></code> 来快速设定相机角度</p></li>
-<li><p>为 <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_euler_angles()</span></code> 新增了单位参数 <code class="docutils literal notranslate"><span class="pre">units</span></code></p></li>
+<li><p>新增了 <a class="reference internal" href="../documentation/camera/camera.html#manimlib.camera.camera.CameraFrame.reorient" title="manimlib.camera.camera.CameraFrame.reorient"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reorient()</span></code></a> 来快速设定相机角度</p></li>
+<li><p>为 <a class="reference internal" href="../documentation/camera/camera.html#manimlib.camera.camera.CameraFrame.set_euler_angles" title="manimlib.camera.camera.CameraFrame.set_euler_angles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_euler_angles()</span></code></a> 新增了单位参数 <code class="docutils literal notranslate"><span class="pre">units</span></code></p></li>
 <li><p>允许任何 <code class="docutils literal notranslate"><span class="pre">VMobject</span></code> 传入 <code class="docutils literal notranslate"><span class="pre">TransformMatchingTex</span></code></p></li>
 <li><p>删除了 <code class="docutils literal notranslate"><span class="pre">Tex</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TexText</span></code> 中双大括号自动分割的用法</p></li>
 </ul>
