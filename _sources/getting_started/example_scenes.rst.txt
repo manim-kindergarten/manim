@@ -9,7 +9,7 @@ InteractiveDevlopment
 ---------------------
 
 .. manim-example:: InteractiveDevelopment
-    :media: ../_static/example_scenes/InteractiveDevelopment.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/InteractiveDevelopment.mp4
 
     from manimlib import *
 
@@ -66,7 +66,7 @@ AnimatingMethods
 ----------------
 
 .. manim-example:: AnimatingMethods
-    :media: ../_static/example_scenes/AnimatingMethods.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/AnimatingMethods.mp4
 
     class AnimatingMethods(Scene):
         def construct(self):
@@ -124,7 +124,7 @@ TextExample
 -----------
 
 .. manim-example:: TextExample
-    :media: ../_static/example_scenes/TextExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/TextExample.mp4
 
     class TextExample(Scene):
         def construct(self):
@@ -178,7 +178,7 @@ TexTransformExample
 -------------------
 
 .. manim-example:: TexTransformExample
-    :media: ../_static/example_scenes/TexTransformExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/TexTransformExample.mp4
 
     class TexTransformExample(Scene):
         def construct(self):
@@ -187,7 +187,7 @@ TexTransformExample
                 # Passing in muliple arguments to Tex will result
                 # in the same expression as if those arguments had
                 # been joined together, except that the submobject
-                # heirarchy of the resulting mobject ensure that the
+                # hierarchy of the resulting mobject ensure that the
                 # Tex mobject has a subject corresponding to
                 # each of these strings.  For example, the Tex mobject
                 # below will have 5 subjects, corresponding to the
@@ -303,7 +303,7 @@ UpdatersExample
 ---------------
 
 .. manim-example:: UpdatersExample
-    :media: ../_static/example_scenes/UpdatersExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/UpdatersExample.mp4
 
     class UpdatersExample(Scene):
         def construct(self):
@@ -335,7 +335,7 @@ UpdatersExample
             # If the argument itself might change, you can use f_always,
             # for which the arguments following the initial Mobject method
             # should be functions returning arguments to that method.
-            # The following line ensures thst decimal.set_value(square.get_y())
+            # The following line ensures that decimal.set_value(square.get_y())
             # is called every frame
             f_always(number.set_value, square.get_width)
             # You could also write the following equivalent line
@@ -388,7 +388,7 @@ CoordinateSystemExample
 -----------------------
 
 .. manim-example:: CoordinateSystemExample
-    :media: ../_static/example_scenes/CoordinateSystemExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/CoordinateSystemExample.mp4
 
     class CoordinateSystemExample(Scene):
         def construct(self):
@@ -472,7 +472,7 @@ GraphExample
 ------------
 
 .. manim-example:: GraphExample
-    :media: ../_static/example_scenes/GraphExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/GraphExample.mp4
 
     class GraphExample(Scene):
         def construct(self):
@@ -558,7 +558,7 @@ SurfaceExample
 --------------
 
 .. manim-example:: SurfaceExample
-    :media: ../_static/example_scenes/SurfaceExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/SurfaceExample.mp4
 
     class SurfaceExample(Scene):
         CONFIG = {
@@ -659,7 +659,7 @@ OpeningManimExample
 -------------------
 
 .. manim-example:: OpeningManimExample
-    :media: ../_static/example_scenes/OpeningManimExample.mp4
+    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/OpeningManimExample.mp4
 
 
     class OpeningManimExample(Scene):
