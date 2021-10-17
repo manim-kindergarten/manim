@@ -1,23 +1,21 @@
-CONFIG dictionary
+CONFIG字典用法
 =================
 
-What's CONFIG
--------------
+什么是CONFIG字典
+-----------------
 
-``CONFIG`` dictionary is a feature of manim, which facilitates the inheritance 
-and modification of parameters between parent and child classes.
+CONFIG字典是manim的一个特性，方便了父子类之间参数的继承和修改
 
-| ``CONFIG`` dictionary 's processing is in ``manimlib/utils/config_ops.py``
-| It can convert the key-value pairs in the ``CONFIG`` dictionary into class attributes and values
+| 对于CONFIG字典的处理，在 ``manimlib/utils/config_ops.py`` 中
+| 它可以将CONFIG字典中的键值对转化为类的属性和值
 
-Generally, the first line of the ``.__init__()`` method in some basic class (``Mobject``, ``Animation``, 
-etc.) will call this function ``digest_config(self, kwargs)`` to convert both 
-the ``CONFIG`` dictionary and ``kwargs`` into attributes. Then it can be accessed 
-directly through ``self.``, which simplifies the handling of inheritance between classes.
+一般在最底层的类( ``Container``, ``Animation``)中的 ``__init__`` 方法第一行会
+调用这个函数 ``digest_config(self, kwargs)`` 将CONFIG字典和kwargs都转化为属性，
+可以直接通过 ``self.`` 访问，简化了类之间继承的处理
 
-**An example**:
+**下面是一个实例**：
 
-There are many class inheritance relationships in ``manimlib/mobject/geometry.py``
+``manimlib/mobject/geometry.py`` 中有很多类继承的关系
 
 .. code-block:: python
 
@@ -40,18 +38,15 @@ There are many class inheritance relationships in ``manimlib/mobject/geometry.py
             "color": WHITE
         }
 
-The ``Circle`` class uses the key-value pair ``"color": RED`` in the ``CONFIG`` 
-dictionary to add the attribute ``self.color``.
+``Circle`` 类通过在CONFIG字典中的键值对 ``"color": BLUE,`` 添加了 ``self.color`` 这个属性，
+在父类 ``VMobject`` 中访问 ``self.color`` 对 ``Circle`` 上色
 
-At the same time, the ``Dot`` class also contains the key ``color`` in the 
-``CONFIG`` dictionary, but the value is different. At this time, the priority will 
-modify the attribute ``self.color`` to  ``WHITE``. 
+同时 ``Dot`` 类在CONFIG字典中也含有键 ``color``，但值不同，此时会利用优先级将 ``self.color`` 这个属性修改为 ``WHITE``，
 
-CONFIG nesting
---------------
+CONFIG字典嵌套
+------------------
 
-The ``CONFIG`` dictionary supports nesting, that is, the value of the key is also 
-a dictionary, for example:
+CONFIG字典支持嵌套，即键的值也为一个字典，例如
 
 .. code-block:: python
 
@@ -76,29 +71,25 @@ a dictionary, for example:
             # some lines
             self.camera = self.camera_class(**self.camera_config)
 
-The ``CONFIG`` dictionary of the ``Camera`` class contains many key-value pairs, 
-and this class needs to be instantiated in the ``Scene`` class. For more convenient 
-control, there is a special key-value pair in the Scene class ``"camera_config": {}``,
-Its value is a dictionary, passed in as ``kwargs`` when initializing the ``Camera`` class 
-to modify the value of the properties of the ``Camera`` class.
+``Camera`` 类的CONFIG字典含有很多键值对，而且 ``Scene`` 类中需要调用这个类，
+为了更方便的控制，``Scene`` 类中有一个特殊的键值对 ``"camera_config": {}`` ，
+它的值是一个字典，通过初始化 ``Camera`` 类的时候作为 ``kwargs`` 传入，修改 ``Camera`` 类的属性的值
 
-So the nesting of the ``CONFIG`` dictionary **essentially** passes in the value as ``kwargs``.
+所以CONFIG字典的嵌套 **本质** 上是将值作为 ``kwargs`` 传入
 
-Common usage
-------------
+常见使用方法
+--------------
 
-When writing a class by yourself, you can add attributes or modify the attributes 
-of the parent class through ``CONFIG``.
+在自己写类的时候，可以通过CONFIG来添加属性或者修改父类的属性
 
-The most commonly used is to modify the properties of the camera when writing a ``Scene``:
+最常用的还是在编写Scene的时候，用来修改camera的属性
 
-.. code-block:: python
+.. code:: python
 
-    class YourScene(Scene):
-        CONFIG = {
-            "camera_config": {
-                "background_color": WHITE,
-            },
-        }
+   CONFIG = {
+       "camera_config": {
+           "background_color": WHITE,
+       },
+   }
 
-For example, the above dictionary will change the background color to white, etc.
+例如添加如上字典，更改背景颜色为白色，等等

@@ -2,15 +2,15 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="CLI flags and configuration" href="configuration.html" /><link rel="prev" title="Installation" href="installation.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="命令行参数和配置" href="configuration.html" /><link rel="prev" title="安装指南" href="installation.html" />
 
-    <link rel="shortcut icon" href="../_static/icon.png"/><meta name="generator" content="sphinx-3.0.3, furo 2020.10.05.beta9"/>
-        <title>Quick Start - manim  documentation</title>
+    <link rel="shortcut icon" href="../_static/mk.png"/><meta name="generator" content="sphinx-3.0.3, furo 2020.10.05.beta9"/>
+        <title>快速入门 - manim shaders  文档</title>
       <link rel="stylesheet" href="../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../_static/styles/default.css?18d7e79a6cdd034fc20ec597">
-    <link rel="stylesheet" href="../_static/pygments.css?18d7e79a6cdd034fc20ec597">
+    <link rel="stylesheet" href="../_static/styles/default.css?a8805e33262fb82da958068c">
+    <link rel="stylesheet" href="../_static/pygments.css?a8805e33262fb82da958068c">
     
 <style>
   :root {
@@ -27,7 +27,9 @@
         <script src="../_static/language_data.js" defer></script>
       
         <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script><script src="../_static/scripts/main.js?18d7e79a6cdd034fc20ec597"></script></head>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../_static/scripts/main.js?a8805e33262fb82da958068c"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -72,7 +74,7 @@
     <label class="header-left nav-overlay-icon" for="__navigation">
       <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
     </label>
-    <div class="header-center"><div class="brand">manim  documentation</div></div>
+    <div class="header-center"><div class="brand">manim shaders  文档</div></div>
     <div class="header-right"></div>
   </header>
   <aside class="sidebar-drawer">
@@ -80,7 +82,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="../_static/transparent_graph.png" alt="Logo"/>
+    <img class="sidebar-logo" src="../_static/Logo_white.png" alt="Logo"/>
   </div>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html">
@@ -88,26 +90,104 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-tree sidebar-scroll">
-  <p><span class="caption-text">Getting Started</span></p>
+  <p><span class="caption-text">入门教程</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">CLI flags and configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_scenes.html">Example Scenes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">CONFIG dictionary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Manim’s structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">安装指南</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">命令行参数和配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_scenes.html">样例学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">CONFIG字典用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Manim结构</a></li>
 </ul>
-<p><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">进阶文档</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/constants.html">constants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/custom_config.html">custom_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/constants.html">常量部分 constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/custom_config.html">默认配置 custom_config</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/animation/index.html">动画部分 animation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/creation.html">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/fading.html">Fading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/growing.html">Growing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/indication.html">Indication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/movement.html">Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/rotation.html">Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/transform.html">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/transform_matching_parts.html">Transform Matching Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/update.html">Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/composition.html">Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/specialized.html">Specialized</a></li>
 </ul>
-<p><span class="caption-text">Development</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/camera/index.html">相机部分 camera</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/camera/camera.html">Camera</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/mobject/index.html">数学物件 Mobject</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/mobject/types/index.html">types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label for="toctree-checkbox-4"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/dot_cloud.html">Dot Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/image_mobject.html">Image Mobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/point_cloud_mobject.html">Point Cloud Mobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/surface.html">Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/vectorized_mobject.html">Vectorized Mobject</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/mobject/svg/index.html">svg</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label for="toctree-checkbox-5"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/brace.html">Brace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/drawings.html">Drawings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/svg_mobject.html">SVGMobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/tex_mobject.html">Tex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/text_mobject.html">Text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/changing.html">Changing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/coordinate_systems.html">CoordinateSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/frame.html">Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/geometry.html">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/interactive.html">Interactive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/matrix.html">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/mobject.html">Mobject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/mobject_update_utils.html">MobjectUpdateUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/number_line.html">NumberLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/probability.html">Probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/shape_matchers.html">ShapeMatchers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/three_dimensions.html">ThreeDimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/value_tracker.html">ValueTracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/vector_field.html">VectorField</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/scene/index.html">场景部分 scene</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label for="toctree-checkbox-6"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/scene_file_writer.html">SceneFileWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/three_d_scene.html">ThreeDScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/sample_space_scene.html">SampleSpaceScene(TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/vector_space_scene.html">VectorScene</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/shaders/index.html">Shaders (TODO)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/utils/index.html">工具函数 utils</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label for="toctree-checkbox-7"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/bezier.html">Bezier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/color.html">Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/config_ops.html">CONFIG_ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/file_ops.html">FILE_ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/iterables.html">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/paths.html">Paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/rate_functions.html">Rate_functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/simple_functions.html">Simple_functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/sounds.html">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/space_ops.html">Space_ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/tex_file_writing.html">Tex_file_writing</a></li>
+</ul>
+</li>
+</ul>
+<p><span class="caption-text">开发相关</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../development/changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../development/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/changelog.html">变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/about.html">关于</a></li>
 </ul>
 
 </div>
@@ -121,12 +201,10 @@
         <label class="toc-overlay-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <section id="quick-start">
-<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
-<p>After installing the manim environment according to the instructions on the
-<a class="reference internal" href="installation.html"><span class="doc">Installation</span></a> page, you can try to make a scene yourself from scratch.</p>
-<p>First, create a new <code class="docutils literal notranslate"><span class="pre">.py</span></code> file (such as <code class="docutils literal notranslate"><span class="pre">start.py</span></code>) according to the following
-directory structure:</p>
+        <section id="id1">
+<h1>快速入门<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>在按照 <a class="reference internal" href="installation.html"><span class="doc">安装指南</span></a> 页面中的指导安装好manim的环境后，你可以尝试从头开始自己制作一个场景。</p>
+<p>首先，根据如下结构创建一个新的 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 文件（如 <code class="docutils literal notranslate"><span class="pre">start.py</span></code> ）：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>manim/
 ├── manimlib/
 │   ├── animation/
@@ -137,7 +215,7 @@ directory structure:</p>
 <span class="hll">└── start.py
 </span></pre></div>
 </div>
-<p>And paste the following code (I will explain the function of each line in detail later):</p>
+<p>然后粘贴如下代码（稍后我会详细解释其每行的作用）：</p>
 <div class="highlight-python notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -157,70 +235,69 @@ directory structure:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
-<p>And run this command:</p>
+<p>运行这个命令：</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manimgl start.py SquareToCircle
 </pre></div>
 </div>
-<p>A window will pop up on the screen. And then you can :</p>
+<p>屏幕上会弹出一个窗口，这时你可以：</p>
 <ul class="simple">
-<li><p>scroll the middle mouse button to move the screen up and down</p></li>
-<li><p>hold down the <kbd class="kbd docutils literal notranslate">z</kbd> on the keyboard while scrolling the middle mouse button to zoom the screen</p></li>
-<li><p>hold down the <kbd class="kbd docutils literal notranslate">s</kbd> key on the keyboard and move the mouse to pan the screen</p></li>
-<li><p>hold down the <kbd class="kbd docutils literal notranslate">d</kbd> key on the keyboard and move the mouse to change the three-dimensional perspective.</p></li>
+<li><p>滚动鼠标中键来上下移动画面</p></li>
+<li><p>按住键盘上 <kbd class="kbd docutils literal notranslate">z</kbd> 键的同时滚动鼠标中键来缩放画面</p></li>
+<li><p>按住键盘上 <kbd class="kbd docutils literal notranslate">s</kbd> 键的同时移动鼠标来平移画面</p></li>
+<li><p>按住键盘上 <kbd class="kbd docutils literal notranslate">d</kbd> 键的同时移动鼠标来改变三维视角</p></li>
 </ul>
-<p>Finally, you can close the window and exit the program by pressing <kbd class="kbd docutils literal notranslate">q</kbd>.</p>
-<p>Run this command again:</p>
+<p>最后，你可以通过按 <kbd class="kbd docutils literal notranslate">q</kbd> 来关闭窗口并退出程序.</p>
+<p>再运行这个命令：</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manimgl start.py SquareToCircle -os
 </pre></div>
 </div>
-<p>At this time, no window will pop up. When the program is finished, this rendered
-image will be automatically opened (saved in the subdirectory <code class="docutils literal notranslate"><span class="pre">images/</span></code> of the same
-level directory of <code class="docutils literal notranslate"><span class="pre">start.py</span></code> by default):</p>
+<p>这时将没有窗口弹出，当程序运行结束后，会自动打开这张渲染得到的图片
+（默认位于同级目录的子目录 <code class="docutils literal notranslate"><span class="pre">images/</span></code> 中）：</p>
 <img alt="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircle.png" class="align-center" src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircle.png"/>
-<section id="make-an-image">
-<h2>Make an image<a class="headerlink" href="#make-an-image" title="Permalink to this headline">¶</a></h2>
-<p>Next, let’s take a detailed look at what each row does.</p>
+<section id="id2">
+<h2>制作图片<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>接下来我们来详细看看每一行都有什么作用：</p>
 <p><strong>Line 1</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
-<p>This will import all the classes that may be used when using manim.</p>
+<p>这将一步引入在使用manim时所有可能会用到的类。</p>
 <p><strong>Line 3</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SquareToCircle</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
 </pre></div>
 </div>
-<p>Create a <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> subclass <code class="docutils literal notranslate"><span class="pre">SquareToCircle</span></code>, which will be
-the scene you write and render.</p>
+<p>创建一个 <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> 的子类 <code class="docutils literal notranslate"><span class="pre">SquareToCircle</span></code>，
+这将是你编写并要渲染的场景。</p>
 <p><strong>Line 4</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </pre></div>
 </div>
-<p>Write the <code class="docutils literal notranslate"><span class="pre">construct()</span></code> method, the content of which will determine
-how to create the mobjects in the screen and what operations need to be performed.</p>
+<p>编写 <code class="xref py py-meth docutils literal notranslate"><span class="pre">construct()</span></code> 方法，
+这里面的内容将决定如何创建画面中的物体，以及需要执行哪些操作。</p>
 <p><strong>Line 5</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Create a circle (an instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> class), called <code class="docutils literal notranslate"><span class="pre">circle</span></code></p>
+<p>创建一个圆（<code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> 类的实例），叫做 <code class="docutils literal notranslate"><span class="pre">circle</span></code>。</p>
 <p><strong>Line 6~7</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="o">.</span><span class="n">set_fill</span><span class="p">(</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">circle</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">BLUE_E</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Set the circle style by calling the circle’s method.</p>
+<p>通过调用circle的方法设置circle的样式。</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">.set_fill()</span></code> method sets the fill color of this circle to blue (<code class="docutils literal notranslate"><span class="pre">BLUE</span></code>, defined in <a class="reference internal" href="../documentation/constants.html"><span class="doc">constants</span></a>), and the fill transparency to 0.5.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">.set_stroke()</span></code> method sets the stroke color of this circle to dark blue (<code class="docutils literal notranslate"><span class="pre">BLUE_E</span></code>, defined in <a class="reference internal" href="../documentation/constants.html"><span class="doc">constants</span></a>), and the stroke width to 4.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.set_fill()</span></code> 方法将这个圆的填充颜色设为蓝色（<code class="docutils literal notranslate"><span class="pre">BLUE</span></code>，在 <a class="reference internal" href="../documentation/constants.html"><span class="doc">常量部分 constants</span></a> 中定义），填充透明度设为0.5。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.set_stroke()</span></code> 方法将这个圆的线条颜色设为深蓝色（<code class="docutils literal notranslate"><span class="pre">BLUE_E</span></code>，在 <a class="reference internal" href="../documentation/constants.html"><span class="doc">常量部分 constants</span></a> 中定义），线条宽度设为4</p></li>
 </ul>
 <p><strong>Line 9</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Add this circle to the screen through the <code class="docutils literal notranslate"><span class="pre">.add()</span></code> method of <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>.</p>
+<p>通过 <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> 的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code> 方法，将这个圆添加到画面上。</p>
 </section>
-<section id="add-animations">
-<h2>Add animations<a class="headerlink" href="#add-animations" title="Permalink to this headline">¶</a></h2>
-<p>Let’s change some codes and add some animations to make videos instead of just pictures.</p>
+<section id="id3">
+<h2>添加动画<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>下面我们改变一些代码，添加一些动画来制作视频而不是仅仅只有图片。</p>
 <div class="highlight-python notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -248,82 +325,75 @@ how to create the mobjects in the screen and what operations need to be performe
         <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div></div>
-<p>Run this command this time:</p>
+<p>这次运行：</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manimgl start.py SquareToCircle
 </pre></div>
 </div>
-<p>The pop-up window will play animations of drawing a square and transforming
-it into a circle. If you want to save this video, run:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manimgl start.py SquareToCircle -o
+<p>弹出的窗口中会播放一个绘制正方形并变换为圆的动画。
+若想要保存这段动画，运行：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manimgl start.py SquareToCircle -ow
 </pre></div>
 </div>
-<p>This time there will be no pop-up window, but the video file (saved in the subdirectory
-<code class="docutils literal notranslate"><span class="pre">videos/</span></code> of the same level directory of <code class="docutils literal notranslate"><span class="pre">start.py</span></code> by default) will be automatically
-opened after the operation is over:</p>
-<video autoplay="" class="manim-video" controls="" loop="" src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircle.mp4"></video><p>Let’s take a look at the code this time. The first 7 lines are the same as the previous
-ones, and the 8th line is similar to the 5th line, which creates an instance of the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> class and named it <code class="docutils literal notranslate"><span class="pre">square</span></code>.</p>
+<p>这次将不会弹出窗口，但会在运行结束后自动打开这个视频文件
+（默认存放在与 <code class="docutils literal notranslate"><span class="pre">start.py</span></code> 同级的 <code class="docutils literal notranslate"><span class="pre">videos/</span></code> 文件夹中）：</p>
+<video autoplay="" class="manim-video" controls="" loop="" src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircle.mp4"></video><p>我们再来看看这次的代码。前7行和前面的一样，第8行类似第5行，
+创建了一个 <code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> 类的实例，命名为 <code class="docutils literal notranslate"><span class="pre">square</span></code>。</p>
 <p><strong>Line 10</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>An animation is played through <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>’s <code class="docutils literal notranslate"><span class="pre">.play()</span></code> method. <code class="xref py py-class docutils literal notranslate"><span class="pre">ShowCreation</span></code>
-is an animation that shows the process of creating a given mobject.
-<code class="docutils literal notranslate"><span class="pre">self.play(ShowCreation(square))</span></code> is to play the animation of creating <code class="docutils literal notranslate"><span class="pre">square</span></code>.</p>
+<p>通过 <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> 的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">play()</span></code> 方法播放了一个动画。
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ShowCreation</span></code> 为一个动画，其表示呈现出创建给出物体的过程。
+<code class="docutils literal notranslate"><span class="pre">self.play(ShowCreation(square))</span></code> 即播放创建 <code class="docutils literal notranslate"><span class="pre">square</span></code> 的动画。</p>
 <p><strong>Line 11</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Use <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>’s <code class="docutils literal notranslate"><span class="pre">.wait()</span></code> method to pause (default 1s), you can pass in
-parameters to indicate the pause time (for example, <code class="docutils literal notranslate"><span class="pre">self.wait(3)</span></code> means pause for 3s).</p>
+<p>通过 <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> 的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">wait()</span></code> 方法来停顿（默认1s），
+你可以向其中传入参数来表示停顿的时间（如 <code class="docutils literal notranslate"><span class="pre">self.wait(3)</span></code> 表示停顿3s）</p>
 <p><strong>Line 12</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">circle</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Play the animation that transforms <code class="docutils literal notranslate"><span class="pre">square</span></code> into <code class="docutils literal notranslate"><span class="pre">circle</span></code>.
-<code class="docutils literal notranslate"><span class="pre">ReplacementTransform(A,</span> <span class="pre">B)</span></code> means to transform A into B’s pattern and replace A with B.</p>
-<p><strong>Line 13</strong>: Same as line 11, pause for 1s.</p>
+<p>播放将 <code class="docutils literal notranslate"><span class="pre">square</span></code> 变化为 <code class="docutils literal notranslate"><span class="pre">circle</span></code> 的动画。<code class="docutils literal notranslate"><span class="pre">ReplacementTransform(A,</span> <span class="pre">B)</span></code>
+表示把A转换为B的图案并替代B</p>
+<p><strong>Line 13</strong>: 同Line 11，停顿1s</p>
 </section>
-<section id="enable-interaction">
-<h2>Enable interaction<a class="headerlink" href="#enable-interaction" title="Permalink to this headline">¶</a></h2>
-<p>Interaction is a new feature of the new version. You can add the following line
-at the end of the code to enable interaction:</p>
+<section id="id4">
+<h2>启用交互<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>支持交互是新版本的新特性，可以在代码的末尾加上如下一行来启用交互：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Then run <code class="docutils literal notranslate"><span class="pre">manimgl</span> <span class="pre">start.py</span> <span class="pre">SquareToCircle</span></code>.</p>
-<p>After the previous animation is executed, the ipython terminal will be opened on
-the command line. After that, you can continue to write code in it, and the statement
-you entered will be executed immediately after pressing <kbd class="kbd docutils literal notranslate">Enter</kbd>.</p>
-<p>For example: input the following lines (without comment lines) into it respectively
-(<code class="docutils literal notranslate"><span class="pre">self.play</span></code> can be abbreviated as <code class="docutils literal notranslate"><span class="pre">play</span></code> in this mode):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stretched 4 times in the vertical direction</span>
-<span class="n">play</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">stretch</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-<span class="c1"># Rotate the ellipse 90°</span>
+<p>这时再执行 <code class="docutils literal notranslate"><span class="pre">manimgl</span> <span class="pre">start.py</span> <span class="pre">SquareToCircle</span></code>。</p>
+<p>在前面的动画执行后，将会在命令行打开iPython终端。之后你可以在其中继续编写代码，
+回车后将会立即运行你输入的语句。例如：向其中分别输入以下行
+（<code class="docutils literal notranslate"><span class="pre">self.play</span></code> 在此时可以简写为 <code class="docutils literal notranslate"><span class="pre">play</span></code> ）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在水平方向上拉伸到四倍</span>
+<span class="n">play</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">stretch</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">{</span><span class="s2">"dim"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="c1"># 旋转90°</span>
 <span class="n">play</span><span class="p">(</span><span class="n">Rotate</span><span class="p">(</span><span class="n">circle</span><span class="p">,</span> <span class="n">TAU</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span>
-<span class="c1"># Move 2 units to the right and shrink to 1/4 of the original</span>
-<span class="n">play</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">RIGHT</span><span class="p">),</span> <span class="n">circle</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
-<span class="c1"># Insert 10 curves into circle for non-linear transformation (no animation will play)</span>
+<span class="c1"># 在向右移动2单位同时缩小为原来的1/4</span>
+<span class="n">play</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">shift</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">RIGHT</span><span class="p">,</span> <span class="n">circle</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="c1"># 为了非线性变换，给circle增加10段曲线（不会播放动画）</span>
 <span class="n">circle</span><span class="o">.</span><span class="n">insert_n_curves</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="c1"># Apply a complex transformation of f(z)=z^2 to all points on the circle</span>
-<span class="n">play</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">apply_complex_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-<span class="c1"># Close the window and exit the program</span>
+<span class="c1"># 给circle上的所有点施加f(z)=z^2的复变换</span>
+<span class="n">play</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">apply_complex_function</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 关闭窗口并退出程序</span>
 <span class="nb">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>You will get an animation similar to the following:</p>
-<video autoplay="" class="manim-video" controls="" loop="" src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircleEmbed.mp4"></video><p>If you want to enter the interactive mode directly, you don’t have to write an
-empty scene containing only <code class="docutils literal notranslate"><span class="pre">self.embed()</span></code>, you can directly run the following command
-(this will enter the ipython terminal while the window pops up):</p>
+<p>你将得到类似下面的动画：</p>
+<video autoplay="" class="manim-video" controls="" loop="" src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircleEmbed.mp4"></video><p>如果你想要直接进入交互模式的话，你不必特意编写一个只含 <code class="docutils literal notranslate"><span class="pre">self.embed()</span></code> 的空场景，
+你可以直接运行下面的命令（这会在弹出窗口的同时进入iPython终端）：</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manimgl
 </pre></div>
 </div>
 </section>
-<section id="you-succeeded">
-<h2>You succeeded!<a class="headerlink" href="#you-succeeded" title="Permalink to this headline">¶</a></h2>
-<p>After reading the above content, you already know how to use manim.
-Below you can see some examples, in the <a class="reference internal" href="example_scenes.html"><span class="doc">Example Scenes</span></a> page.
-But before that, you’d better have a look at the <a class="reference internal" href="configuration.html"><span class="doc">CLI flags and configuration</span></a> of manim.</p>
+<section id="id5">
+<h2>成功入门<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>在看完上述内容后，你已经了解如何使用manim了，下面你可以看一些例子，在 <a class="reference internal" href="example_scenes.html"><span class="doc">样例学习</span></a> 页面中。
+但在这之前，你最好先了解一下manim的 <a class="reference internal" href="configuration.html"><span class="doc">命令行参数和配置</span></a>。</p>
 </section>
 </section>
 
@@ -336,7 +406,7 @@ But before that, you’d better have a look at the <a class="reference internal"
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">CLI flags and configuration</div>
+                <div class="title">命令行参数和配置</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -347,14 +417,14 @@ But before that, you’d better have a look at the <a class="reference internal"
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Installation</div>
+                <div class="title">安装指南</div>
                 
               </div>
             </a>
         </div>
 
         <div class="related-information">
-          <span class="copyright">Copyright &copy; - This document has been placed in the public domain.</span> |
+          <span class="copyright">版权所有 &copy; 2020-2021 Manim Kindergarten Team</span> |
           Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
           <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
@@ -368,16 +438,16 @@ But before that, you’d better have a look at the <a class="reference internal"
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            目录
           </span>
         </div>
         <div class="toc-tree">
           <ul>
-<li><a class="reference internal" href="#">Quick Start</a><ul>
-<li><a class="reference internal" href="#make-an-image">Make an image</a></li>
-<li><a class="reference internal" href="#add-animations">Add animations</a></li>
-<li><a class="reference internal" href="#enable-interaction">Enable interaction</a></li>
-<li><a class="reference internal" href="#you-succeeded">You succeeded!</a></li>
+<li><a class="reference internal" href="#">快速入门</a><ul>
+<li><a class="reference internal" href="#id2">制作图片</a></li>
+<li><a class="reference internal" href="#id3">添加动画</a></li>
+<li><a class="reference internal" href="#id4">启用交互</a></li>
+<li><a class="reference internal" href="#id5">成功入门</a></li>
 </ul>
 </li>
 </ul>

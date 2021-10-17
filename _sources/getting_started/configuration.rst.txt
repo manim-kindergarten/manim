@@ -1,76 +1,70 @@
-CLI flags and configuration
+命令行参数和配置
 ===========================
 
-Command Line Interface
+命令行界面
 ----------------------
 
-To run manim, you need to enter the directory at the same level as ``manimlib/`` 
-and enter the command in the following format into terminal:
+使用manim运行一个动画，需要进入到与 ``manimlib/`` 文件夹同级的目录中，并向命令行中输入如下格式的命令：
 
 .. code-block:: sh
 
     manimgl <code>.py <Scene> <flags>
-    # or
+    # 或
     manim-render <code>.py <Scene> <flags>
 
-- ``<code>.py`` : The python file you wrote. Needs to be at the same level as ``manimlib/``, otherwise you need to use an absolute path or a relative path.
-- ``<Scene>`` : The scene you want to render here. If it is not written or written incorrectly, it will list all for you to choose. And if there is only one ``Scene`` in the file, this class will be rendered directly.
-- ``<flags>`` : CLI flags.
+- ``<code>.py`` : 你写的python文件，需要与 ``manim.py`` 同级，否则需要使用绝对路径，或写准相对路径
+- ``<Scene>`` : 你想要渲染的场景，或者一些场景。如果没有写或者写错，若文件中只有一个Scene，会直接渲染这个类，否则会列出所有让你选择
+- ``<flags>`` : 传入的选项
 
-Some useful flags
+一些常用的选项
 ^^^^^^^^^^^^^^^^^
 
-- ``-w`` to write the scene to a file.
-- ``-o`` to write the scene to a file and open the result.
-- ``-s`` to skip to the end and just show the final frame. 
+- ``-w`` 把场景写入文件
+- ``-o`` 把场景写入文件并打开
+- ``-s`` 跳到最后只展示最后一帧
 
-  - ``-so`` will save the final frame to an image and show it.
+  - ``-so`` 保存最后一帧并打开
 
-- ``-n <number>`` to skip ahead to the ``n``\ ’th animation of a scene. 
-- ``-f`` to make the playback window fullscreen.
+- ``-n <number>`` 跳到场景中第 ``n`` 个动画 
+- ``-f`` 打开窗口全屏
 
-All supported flags
+所有支持的选项
 ^^^^^^^^^^^^^^^^^^^
 
-========================================================== ====== =================================================================================================================================================================================================
-flag                                                       abbr   function
-========================================================== ====== =================================================================================================================================================================================================
-``--help``                                                 ``-h`` Show the help message and exit
-``--write_file``                                           ``-w`` Render the scene as a movie file
-``--skip_animations``                                      ``-s`` Skip to the last frame
-``--low_quality``                                          ``-l`` Render at a low quality (for faster rendering)
-``--medium_quality``                                       ``-m`` Render at a medium quality
-``--hd``                                                          Render at a 1080p quality
-``--uhd``                                                         Render at a 4k quality
-``--full_screen``                                          ``-f`` Show window in full screen
-``--save_pngs``                                            ``-g`` Save each frame as a png
-``--save_as_gif``                                          ``-i`` Save the video as gif
-``--transparent``                                          ``-t`` Render to a movie file with an alpha channel
-``--quiet``                                                ``-q``
-``--write_all``                                            ``-a`` Write all the scenes from a file
-``--open``                                                 ``-o`` Automatically open the saved file once its done
-``--finder``                                                      Show the output file in finder
-``--config``                                                      Guide for automatic configuration
-``--file_name FILE_NAME``                                         Name for the movie or image file
-``--start_at_animation_number START_AT_ANIMATION_NUMBER``  ``-n`` Start rendering not from the first animation, but from another, specified by its index. If you passing two comma separated values, e.g. "3,6", it will end the rendering at the second value.
-``--resolution RESOLUTION``                                ``-r`` Resolution, passed as "WxH", e.g. "1920x1080"
-``--frame_rate FRAME_RATE``                                       Frame rate, as an integer
-``--color COLOR``                                          ``-c`` Background color
-``--leave_progress_bars``                                         Leave progress bars displayed in terminal
-``--video_dir VIDEO_DIR``                                         directory to write video
-``--config_file CONFIG_FILE``                                     Path to the custom configuration file
-========================================================== ====== =================================================================================================================================================================================================
+========================================================== ========== ==============================================================================
+选项                                                        简写       含义
+========================================================== ========== ==============================================================================
+``--help``                                                 ``-h``     显示提示信息并退出
+``--write_file``                                           ``-w``     把场景渲染成视频文件
+``--skip_animations``                                      ``-s``     跳到最后一帧
+``--low_quality``                                          ``-l``     使用低质量渲染(默认480p15)
+``--medium_quality``                                       ``-m``     使用中等质量渲染(默认720p30)
+``--hd``                                                              使用高质量渲染(默认1080p30)
+``--uhd``                                                             使用4K质量渲染
+``--full_screen``                                          ``-f``     全屏呈现窗口
+``--save_pngs``                                            ``-g``     把所有帧都保存为png文件
+``--save_as_gif``                                          ``-i``     把场景输出为gif文件
+``--transparent``                                          ``-t``     渲染alpha通道，视频为mov格式
+``--quiet``                                                ``-q``    
+``--write_all``                                            ``-a``     渲染文件中的所有场景
+``--open``                                                 ``-o``     保存文件后自动打开
+``--finder``                                                          打开保存文件的文件夹
+``--file_name FILE_NAME``                                             给输出文件重命名
+``--start_at_animation_number START_AT_ANIMATION_NUMBER``  ``-n``     后面接两个数(逗号隔开)仅渲染一部分动画，如"3,6"
+``--resolution RESOLUTION``                                ``-r``     分辨率，传入格式为"WxH", 如"1920x1080"
+``--frame_rate FRAME_RATE``                                           视频帧率（整数）
+``--color COLOR``                                          ``-c``     背景颜色
+``--leave_progress_bars``                                             保持进度条留在终端中
+``--video_dir VIDEO_DIR``                                             存放视频的目录
+========================================================== ========== ==============================================================================
 
-custom_config
+个性化默认值
 --------------
 
-In order to perform more configuration (about directories, etc.) and permanently 
-change the default value (you don't have to add flags to the command every time), 
-you can modify ``custom_config.yml``. The meaning of each option is in 
-page :doc:`../documentation/custom_config`.
+为了进行更多配置（关于目录等）并且永久更改默认值（不必每次都在命令中添加flags），
+可以修改/新建 ``custom_config.yml`` ，其中各选项含义见： :doc:`../documentation/custom_config` 。
 
-You can also use different ``custom_config.yml`` for different directories, such as 
-following the directory structure:
+你也可以对于不同目录使用不同的custom_config.yml，如按照以下目录结构：
 
 .. code-block:: text
 
@@ -85,12 +79,5 @@ following the directory structure:
     │   └── custom_config.yml
     └── custom_config.yml
 
-When you enter the ``project/`` folder and run ``manimgl code.py <Scene>``, 
-it will overwrite ``manim/default_config.yml`` with ``custom_config.yml`` 
-in the ``project`` folder.
-
-Alternatively, you can use ``--config_file`` flag in CLI to specify configuration file manually.
-
-.. code-block:: sh
-
-    manimgl project/code.py --config_file /path/to/custom_config.yml
+进入 ``project/`` 文件夹中，运行 ``manimgl code.py <Scene>`` 的时候，
+会用 ``project/`` 文件夹下的 ``custom_config.yml`` 覆盖 ``manim/default_config.yml``。

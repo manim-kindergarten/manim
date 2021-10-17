@@ -1,21 +1,19 @@
-custom_config
-==============
+默认配置 custom_config
+=======================
 
 ``directories``
 ---------------
 
 - ``mirror_module_path``
-    (``True`` or ``False``) Whether to create a folder named the name of the 
-    running file under the ``output`` path, and save the output (``images/`` 
-    or ``videos/``) in it.
+    （``True`` 或者 ``False``）是否在 ``output`` 路径下创建名为运行文件的名的文件夹，
+    并在其中保存输出（``images/`` 或 ``videos/``）
 
 - ``output``
-    Output file path, the videos will be saved in the ``videos/`` folder under it, 
-    and the pictures will be saved in the ``images/`` folder under it.
+    输出文件路径，视频会保存在其下 ``videos/`` 文件夹中，图片会保存在其下 ``images/`` 文件夹中
 
-    For example, if you set ``output`` to ``"/.../manim/output"`` and 
-    ``mirror_module_path`` to ``False``, then you exported ``Scene1`` in the code 
-    file and saved the last frame, then the final directory structure will be like:
+    例如，如果你把 ``output`` 设置为 ``"/.../manim/output"`` ，把 
+    ``mirror_module_path`` 设置为 ``False``, 之后导出代码中的 ``Scene1`` 
+    视频和最后一帧, 最后的目录结构将是:
 
     .. code-block:: text
         :emphasize-lines: 9, 11
@@ -34,7 +32,7 @@ custom_config
             ├── code.py
             └── custom_config.yml
 
-    But if you set ``mirror_module_path`` to ``True``, the directory structure will be:
+    但是如果你把 ``mirror_module_path`` 设置为 ``True``, 目录结构则将是:
 
     .. code-block:: text
         :emphasize-lines: 8
@@ -55,90 +53,74 @@ custom_config
             └── custom_config.yml
 
 - ``raster_images`` 
-    The directory for storing raster images to be used in the code (including 
-    ``.jpg``, ``.jpeg``, ``.png`` and ``.gif``), which will be read by ``ImageMobject``.
+    存放代码中要使用的像素图像（包括 ``.jpg``，``.jpeg``，`` .png`` 和 ``.gif``）的目录，
+    将由 ``ImageMobject`` 读取
 
 - ``vector_images``
-    The directory for storing vector images to be used in the code (including 
-    ``.svg`` and ``.xdv``), which will be read by ``SVGMobject``.
+    存放代码中要使用的矢量图像（包括 ``.svg`` 和 ``.xdv``）的目录，将由 ``SVGMobject`` 读取
 
 - ``sounds``
-    The directory for storing sound files to be used in ``Scene.add_sound()`` (
-    including ``.wav`` and ``.mp3``).
+    存放代码中要使用的声音文件（包括 ``.wav`` 和 ``.mp3``）的目录，使用 ``Scene.add_sound()`` 读取 .
 
 - ``temporary_storage``
-    The directory for storing temporarily generated cache files, including 
-    ``Tex`` cache, ``Text`` cache and storage of object points.
+    存储临时产生的缓存文件的目录，包含 ``Tex`` 的缓存、``Text`` 的缓存和物体点集的存储
 
 ``tex``
 -------
 
 - ``executable``
-    The executable program used to compile LaTeX (``latex`` or ``xelatex -no-pdf``
-    is recommended)
+    编译LaTeX使用的可执行程序（推荐 ``latex`` 或 ``xelatex -no-pdf``）
 
 - ``template_file``
-    LaTeX template used, in ``manimlib/tex_templates``
+    使用的LaTeX模板，在 ``manimlib/tex_templates`` 中
 
 - ``intermediate_filetype``
-    The type of intermediate vector file generated after compilation (``dvi`` if 
-    ``latex`` is used, ``xdv`` if ``xelatex`` is used)
+    编译后产生的中间矢量文件的类型（若使用 ``latex`` 则为 ``dvi``，若使用 ``xelatex`` 即为 ``xdv``）
     
 - ``text_to_replace``
-    The text to be replaced in the template (needn't to change)
+    模板中待替换的文字（默认即可）
 
 ``universal_import_line``
 -------------------------
 
-Import line that need to execute when entering interactive mode directly.
+在直接进入交互模式下需要引入包的语句
 
 ``style``
 ---------
 
 - ``font`` 
-    Default font of Text
+    ``Text`` 的默认字体
 
 - ``background_color``
-    Default background color
+    默认背景颜色
 
 ``window_position``
 -------------------
 
-The relative position of the playback window on the display (two characters, 
-the first character means upper(U) / middle(O) / lower(D), the second character 
-means left(L) / middle(O) / right(R)).
+反馈窗口在显示器上的相对位置（两个字母，第一个字母表示 上U/中O/下D，第二个字母表示 左L/中O/右R）
 
 ``window_monitor``
 ------------------
 
-The number of the monitor you want the preview window to pop up on. (default is 0)
+反馈窗口出现的显示器的编号
 
-``break_into_partial_movies``
------------------------------
-
-If this is set to ``True``, then many small files will be written corresponding 
-to each ``Scene.play`` and ``Scene.wait`` call, and these files will then be combined
-to form the full scene.  
-
-Sometimes video-editing is made easier when working with the broken up scene, which
-effectively has cuts at all the places you might want.
 
 ``camera_qualities``
 --------------------
 
-Export quality
+导出质量
 
 - ``low``
-    Low quality (default is 480p15)
+    低质量（默认 480p15）
 
 - ``medium``
-    Medium quality (default is 720p30)
+    中等质量（默认 720p30）
 
 - ``high``
-    High quality (default is 1080p30)
+    高质量（默认 1080p30）
 
 - ``ultra_high``
-    Ultra high quality (default is 4K60)
+    超高质量（默认 4K60）
 
 - ``default_quality``
-    Default quality (one of the above four)
+    默认质量（选填以上四种之一）

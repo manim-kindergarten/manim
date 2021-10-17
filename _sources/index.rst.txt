@@ -1,16 +1,18 @@
-Manim's documentation
-=====================
+Manim shaders版本教程文档
+=============================
 
-.. image:: https://cdn.jsdelivr.net/gh/3b1b/manim@master/logo/white_with_name.png
+.. image:: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/DocumentHeader.png
 
-Manim is an animation engine for explanatory math videos. It's used to create precise animations programmatically, as seen in the videos
-at `3Blue1Brown <https://www.3blue1brown.com/>`_.
+这些文档基于 `3b1b/manim存储库 <https://github.com/3b1b/manim>`_ 的 `master分支 <https://github.com/3b1b/manim/>`_ 。
+是这个 `官方文档 <https://3b1b.github.io/manim/>`_ 的中文版本。
 
-And here is a Chinese version of this documentation: https://docs.manim.org.cn/shaders
+.. admonition:: _(:з」∠)_
+
+   不是翻译版本哦，是中文版。因为那个的作者也是我（没想到吧2333）
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: 入门教程
 
    getting_started/installation
    getting_started/quickstart
@@ -18,18 +20,23 @@ And here is a Chinese version of this documentation: https://docs.manim.org.cn/s
    getting_started/example_scenes
    getting_started/config
    getting_started/structure
-   getting_started/whatsnew
 
 .. toctree::
    :maxdepth: 2
-   :caption: Documentation
+   :caption: 进阶文档
 
    documentation/constants
    documentation/custom_config
+   documentation/animation/index
+   documentation/camera/index
+   documentation/mobject/index
+   documentation/scene/index
+   documentation/shaders/index
+   documentation/utils/index
 
 .. toctree::
    :maxdepth: 2
-   :caption: Development
+   :caption: 开发相关
 
    development/changelog
    development/contributing

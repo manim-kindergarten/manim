@@ -1,11 +1,9 @@
-Quick Start
+快速入门
 ===========
 
-After installing the manim environment according to the instructions on the
-:doc:`installation` page, you can try to make a scene yourself from scratch.
+在按照 :doc:`installation` 页面中的指导安装好manim的环境后，你可以尝试从头开始自己制作一个场景。
 
-First, create a new ``.py`` file (such as ``start.py``) according to the following
-directory structure:
+首先，根据如下结构创建一个新的 ``.py`` 文件（如 ``start.py`` ）：
 
 .. code-block:: text
     :emphasize-lines: 8
@@ -19,7 +17,7 @@ directory structure:
     ├── custom_config.yml
     └── start.py
 
-And paste the following code (I will explain the function of each line in detail later):
+然后粘贴如下代码（稍后我会详细解释其每行的作用）：
 
 .. code-block:: python
     :linenos:
@@ -34,97 +32,96 @@ And paste the following code (I will explain the function of each line in detail
 
             self.add(circle)
 
-And run this command:
+运行这个命令：
 
 .. code-block:: sh
 
     manimgl start.py SquareToCircle
 
-A window will pop up on the screen. And then you can :
+屏幕上会弹出一个窗口，这时你可以：
 
-- scroll the middle mouse button to move the screen up and down
-- hold down the :kbd:`z` on the keyboard while scrolling the middle mouse button to zoom the screen
-- hold down the :kbd:`s` key on the keyboard and move the mouse to pan the screen
-- hold down the :kbd:`d` key on the keyboard and move the mouse to change the three-dimensional perspective.
+- 滚动鼠标中键来上下移动画面
+- 按住键盘上 :kbd:`z` 键的同时滚动鼠标中键来缩放画面
+- 按住键盘上 :kbd:`s` 键的同时移动鼠标来平移画面
+- 按住键盘上 :kbd:`d` 键的同时移动鼠标来改变三维视角
 
-Finally, you can close the window and exit the program by pressing :kbd:`q`.
+最后，你可以通过按 :kbd:`q` 来关闭窗口并退出程序.
 
-Run this command again:
+再运行这个命令：
 
 .. code-block:: sh
 
     manimgl start.py SquareToCircle -os
 
-At this time, no window will pop up. When the program is finished, this rendered
-image will be automatically opened (saved in the subdirectory ``images/`` of the same
-level directory of ``start.py`` by default):
+这时将没有窗口弹出，当程序运行结束后，会自动打开这张渲染得到的图片
+（默认位于同级目录的子目录 ``images/`` 中）：
 
 .. image:: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircle.png
     :align: center
 
-Make an image
+制作图片
 -------------
 
-Next, let's take a detailed look at what each row does.
+接下来我们来详细看看每一行都有什么作用：
 
-**Line 1**:
+**Line 1**: 
 
 .. code-block:: python
     
     from manimlib import *
     
-This will import all the classes that may be used when using manim.
+这将一步引入在使用manim时所有可能会用到的类。
 
 **Line 3**:
 
 .. code-block:: python
-
+    
     class SquareToCircle(Scene):
 
-Create a :class:`Scene` subclass ``SquareToCircle``, which will be
-the scene you write and render.
+创建一个 :class:`~manimlib.scene.scene.Scene` 的子类 ``SquareToCircle``，
+这将是你编写并要渲染的场景。
 
 **Line 4**:
 
 .. code-block:: python
-
+    
     def construct(self):
 
-Write the ``construct()`` method, the content of which will determine
-how to create the mobjects in the screen and what operations need to be performed.
+编写 :meth:`~manimlib.scene.scene.Scene.construct` 方法，
+这里面的内容将决定如何创建画面中的物体，以及需要执行哪些操作。
 
 **Line 5**:
 
 .. code-block:: python
-
+    
     circle = Circle()
 
-Create a circle (an instance of the :class:`Circle` class), called ``circle``
+创建一个圆（:class:`~manimlib.mobject.geometry.Circle` 类的实例），叫做 ``circle``。
 
 **Line 6~7**:
 
 .. code-block:: python
-
+    
     circle.set_fill(BLUE, opacity=0.5)
     circle.set_stroke(BLUE_E, width=4)
 
-Set the circle style by calling the circle's method.
+通过调用circle的方法设置circle的样式。
 
-- The ``.set_fill()`` method sets the fill color of this circle to blue (``BLUE``, defined in :doc:`../documentation/constants`), and the fill transparency to 0.5.
-- The ``.set_stroke()`` method sets the stroke color of this circle to dark blue (``BLUE_E``, defined in :doc:`../documentation/constants`), and the stroke width to 4.
+- ``.set_fill()`` 方法将这个圆的填充颜色设为蓝色（``BLUE``，在 :doc:`../documentation/constants` 中定义），填充透明度设为0.5。
+- ``.set_stroke()`` 方法将这个圆的线条颜色设为深蓝色（``BLUE_E``，在 :doc:`../documentation/constants` 中定义），线条宽度设为4
 
 **Line 9**:
 
 .. code-block:: python
-
+    
     self.add(circle)
 
-Add this circle to the screen through the ``.add()`` method of :class:`Scene`.
+通过 :class:`~manimlib.scene.scene.Scene` 的 :meth:`~manimlib.scene.scene.Scene.add` 方法，将这个圆添加到画面上。
 
-Add animations
+添加动画
 --------------
 
-Let's change some codes and add some animations to make videos instead of just pictures.
+下面我们改变一些代码，添加一些动画来制作视频而不是仅仅只有图片。
 
 .. code-block:: python
     :linenos:
@@ -137,120 +134,112 @@ Let's change some codes and add some animations to make videos instead of just p
             circle.set_fill(BLUE, opacity=0.5)
             circle.set_stroke(BLUE_E, width=4)
             square = Square()
-
+    
             self.play(ShowCreation(square))
             self.wait()
             self.play(ReplacementTransform(square, circle))
             self.wait()
 
-Run this command this time:
+这次运行：
 
 .. code-block:: sh
 
     manimgl start.py SquareToCircle
 
-The pop-up window will play animations of drawing a square and transforming
-it into a circle. If you want to save this video, run:
+弹出的窗口中会播放一个绘制正方形并变换为圆的动画。
+若想要保存这段动画，运行：
 
 .. code-block:: sh
     
-    manimgl start.py SquareToCircle -o
+    manimgl start.py SquareToCircle -ow
 
-This time there will be no pop-up window, but the video file (saved in the subdirectory
-``videos/`` of the same level directory of ``start.py`` by default) will be automatically
-opened after the operation is over:
+这次将不会弹出窗口，但会在运行结束后自动打开这个视频文件
+（默认存放在与 ``start.py`` 同级的 ``videos/`` 文件夹中）：
 
 .. raw:: html
 
     <video class="manim-video" controls loop autoplay src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircle.mp4"></video>
 
-Let's take a look at the code this time. The first 7 lines are the same as the previous
-ones, and the 8th line is similar to the 5th line, which creates an instance of the
-:class:`Square` class and named it ``square``.
+我们再来看看这次的代码。前7行和前面的一样，第8行类似第5行，
+创建了一个 :class:`~manimlib.mobject.geometry.Square` 类的实例，命名为 ``square``。
 
 **Line 10**:
 
 .. code-block:: python
-
+    
     self.play(ShowCreation(square))
 
-An animation is played through :class:`Scene`'s ``.play()`` method. :class:`ShowCreation`
-is an animation that shows the process of creating a given mobject.
-``self.play(ShowCreation(square))`` is to play the animation of creating ``square``.
+通过 :class:`~manimlib.scene.scene.Scene` 的 :meth:`~manimlib.scene.scene.Scene.play` 方法播放了一个动画。
+:class:`~manimlib.animation.creation.ShowCreation` 为一个动画，其表示呈现出创建给出物体的过程。
+``self.play(ShowCreation(square))`` 即播放创建 ``square`` 的动画。
 
 **Line 11**:
 
 .. code-block:: python
-
+    
     self.wait()
 
-Use :class:`Scene`'s ``.wait()`` method to pause (default 1s), you can pass in
-parameters to indicate the pause time (for example, ``self.wait(3)`` means pause for 3s).
+通过 :class:`~manimlib.scene.scene.Scene` 的 :meth:`~manimlib.scene.scene.Scene.wait` 方法来停顿（默认1s），
+你可以向其中传入参数来表示停顿的时间（如 ``self.wait(3)`` 表示停顿3s）
 
 **Line 12**:
 
 .. code-block:: python
-
+    
     self.play(ReplacementTransform(square, circle))
 
-Play the animation that transforms ``square`` into ``circle``.
-``ReplacementTransform(A, B)`` means to transform A into B's pattern and replace A with B.
+播放将 ``square`` 变化为 ``circle`` 的动画。``ReplacementTransform(A, B)`` 
+表示把A转换为B的图案并替代B
 
-**Line 13**: Same as line 11, pause for 1s.
+**Line 13**: 同Line 11，停顿1s
 
 
-Enable interaction
+启用交互
 ------------------
 
-Interaction is a new feature of the new version. You can add the following line
-at the end of the code to enable interaction:
+支持交互是新版本的新特性，可以在代码的末尾加上如下一行来启用交互：
 
 .. code-block:: python
 
     self.embed()
 
-Then run ``manimgl start.py SquareToCircle``. 
+这时再执行 ``manimgl start.py SquareToCircle``。
 
-After the previous animation is executed, the ipython terminal will be opened on
-the command line. After that, you can continue to write code in it, and the statement
-you entered will be executed immediately after pressing :kbd:`Enter`.
-
-For example: input the following lines (without comment lines) into it respectively
-(``self.play`` can be abbreviated as ``play`` in this mode):
+在前面的动画执行后，将会在命令行打开iPython终端。之后你可以在其中继续编写代码，
+回车后将会立即运行你输入的语句。例如：向其中分别输入以下行
+（``self.play`` 在此时可以简写为 ``play`` ）：
 
 .. code-block:: python
 
-    # Stretched 4 times in the vertical direction
-    play(circle.animate.stretch(4, dim=0))
-    # Rotate the ellipse 90°
+    # 在水平方向上拉伸到四倍
+    play(circle.stretch, 4, {"dim": 0})
+    # 旋转90°
     play(Rotate(circle, TAU / 4))
-    # Move 2 units to the right and shrink to 1/4 of the original
-    play(circle.animate.shift(2 * RIGHT), circle.animate.scale(0.25))
-    # Insert 10 curves into circle for non-linear transformation (no animation will play)
+    # 在向右移动2单位同时缩小为原来的1/4
+    play(circle.shift, 2 * RIGHT, circle.scale, 0.25)
+    # 为了非线性变换，给circle增加10段曲线（不会播放动画）
     circle.insert_n_curves(10)
-    # Apply a complex transformation of f(z)=z^2 to all points on the circle
-    play(circle.animate.apply_complex_function(lambda z: z**2))
-    # Close the window and exit the program
+    # 给circle上的所有点施加f(z)=z^2的复变换
+    play(circle.apply_complex_function, lambda z: z**2)
+    # 关闭窗口并退出程序
     exit()
 
-You will get an animation similar to the following:
+你将得到类似下面的动画：
 
 .. raw:: html
 
     <video class="manim-video" controls loop autoplay src="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/quickstart/SquareToCircleEmbed.mp4"></video>
 
-If you want to enter the interactive mode directly, you don't have to write an
-empty scene containing only ``self.embed()``, you can directly run the following command
-(this will enter the ipython terminal while the window pops up):
+如果你想要直接进入交互模式的话，你不必特意编写一个只含 ``self.embed()`` 的空场景，
+你可以直接运行下面的命令（这会在弹出窗口的同时进入iPython终端）：
 
 .. code-block:: sh
 
     manimgl
 
-You succeeded!
+成功入门
 --------------
 
-After reading the above content, you already know how to use manim.
-Below you can see some examples, in the :doc:`example_scenes` page.
-But before that, you'd better have a look at the :doc:`configuration` of manim.
+在看完上述内容后，你已经了解如何使用manim了，下面你可以看一些例子，在 :doc:`example_scenes` 页面中。
+但在这之前，你最好先了解一下manim的 :doc:`configuration`。
 

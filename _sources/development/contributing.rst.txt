@@ -1,59 +1,55 @@
-Contributing
+贡献
 ============
 
-Accept any contribution you make :)
+接受你做出任何贡献 :)
 
-- **Contribute to the manim source code**: 
+- **对manim源代码做出贡献**：
 
-Please fork to your own repository and make changes, submit a pull request, and fill in 
-the motivation for the change following the instructions in the template. We will check 
-your pull request in detail (this usually takes a while, please be patient)
+请fork到自己的repository并做出更改后，提出一个pull request，并按照模版中的指导填写好更改的动机等。
+之后Grant会详细的检查你的pull request（这通常会花费一段时间，请耐心等待）
 
-- **Contribute to the documentation**: 
+- **对文档做出贡献**：
 
-Also submit a pull request and write down the main changes.
+同样提出pull request，并写好主要更改的内容。
 
-- **If you find a bug in the code**: 
+- **如果你发现了代码中的bug但并不知道如何改正**：
 
-Please open an issue and fill in the found problem and your environment according 
-to the template. (But please note that if you think this problem is just a problem 
-of yourself, rather than a problem of source code, it is recommended that you ask a 
-question in the `Q&A category <https://github.com/3b1b/manim/discussions/categories/q-a>`_ 
-of the discussion page)
+请提出一个issue，并根据模板填写好发现的问题以及你的运行环境等。
+（但请注意，如果你认为这个问题只是你自己配置的问题，而不是源码的问题，
+更推荐你在discussion中一个 `Q&A <https://github.com/3b1b/manim/discussions/categories/q-a>`_）
 
-- **You are welcome to share the content you made with manim**: 
+- **欢迎你分享自己利用manim制作的内容**：
 
-Post it in the `show and tell category <https://github.com/3b1b/manim/discussions/categories/show-and-tell>`_
-of the discussion page.
+发布到discussion页面的 `show and tell分类 <https://github.com/3b1b/manim/discussions/categories/show-and-tell>`_ 中。
 
-- **You are also welcome to share some of your suggestions and ideas**: 
+- **也欢迎你分享自己的一些建议和想法**：
 
-Post them in the `ideas category <https://github.com/3b1b/manim/discussions/categories/ideas>`_ 
-of the discussion page.
+发布到discussion页面的 `ideas分类 <https://github.com/3b1b/manim/discussions/categories/ideas>`_ 中。
 
-How to build this documentation
--------------------------------
 
-- Clone the 3b1b/manim repository
+如何构建本文档
+-------------------------
+
+- clone 3b1b/manim存储库
 
 .. code-block:: sh
 
     git clone https://github.com/3b1b/manim.git
-    # or your own repo
+    # 或者你自己fork的repo
     # git clone https://github.com/<your user name>/manim.git
     cd manim
 
-- Install python package dependencies
+- 安装python包依赖
 
 .. code-block:: sh
 
     pip install -r docs/requirements.txt
 
-- Go to the ``docs/`` folder and build
+- 进入 ``docs/`` 文件夹并构建
 
 .. code-block:: sh
 
     cd docs/
     make html
 
-- The output document is located in ``docs/build/html/``
+- 输出文档位于 ``docs/build/html/`` 中

@@ -1,11 +1,10 @@
-constants
-=========
+常量部分 constants
+====================
 
-The ``constants.py`` in the ``manimlib`` folder defines the constants 
-needed when running manim. Some constants are not explained here because 
-they are only used inside manim.
+``manimlib`` 文件夹中的 ``constants.py`` 定义了在运行manim时需要的常量。
+一些常量在这里没有说明，因为他们只在manim内部使用
 
-Frame and pixel shape
+画面和帧形状
 ---------------------
 
 .. code-block:: python
@@ -20,7 +19,7 @@ Frame and pixel shape
     DEFAULT_PIXEL_WIDTH = 1920
     DEFAULT_FRAME_RATE = 30
 
-Buffs
+间距
 -----
 
 .. code-block:: python
@@ -33,18 +32,18 @@ Buffs
     DEFAULT_MOBJECT_TO_EDGE_BUFFER = MED_LARGE_BUFF    # Distance between object and edge
     DEFAULT_MOBJECT_TO_MOBJECT_BUFFER = MED_SMALL_BUFF # Distance between objects   
 
-Run times
----------
+动画默认运行时间
+-------------------
 
 .. code-block:: python
 
     DEFAULT_POINTWISE_FUNCTION_RUN_TIME = 3.0
     DEFAULT_WAIT_TIME = 1.0
 
-Coordinates
+坐标
 -----------
 
-manim uses three-dimensional coordinates and uses the type of ``ndarray``
+manim使用三维坐标，并且用 ``ndarray`` 的类型
 
 .. code-block:: python
 
@@ -70,8 +69,8 @@ manim uses three-dimensional coordinates and uses the type of ``ndarray``
     LEFT_SIDE = FRAME_X_RADIUS * LEFT
     RIGHT_SIDE = FRAME_X_RADIUS * RIGHT
 
-Mathematical constant
----------------------
+数学常数
+----------
 
 .. code-block:: python
 
@@ -79,8 +78,8 @@ Mathematical constant
    TAU = 2 * PI
    DEGREES = TAU / 360
 
-Text
-----
+针对Text
+----------
 
 .. code-block:: python
 
@@ -91,17 +90,17 @@ Text
     OBLIQUE = "OBLIQUE"
     BOLD = "BOLD"
 
-Stroke width
+线条宽度
 ------------
 
 .. code-block:: python
 
     DEFAULT_STROKE_WIDTH = 4
 
-Colours
+颜色
 -------
 
-Here are the preview of default colours. (Modified from 
+这里是manim中定义的颜色的预览：(修改自 
 `elteoremadebeethoven <https://elteoremadebeethoven.github.io/manim_3feb_docs.github.io/html/_static/colors/colors.html>`_)
 
 .. raw:: html

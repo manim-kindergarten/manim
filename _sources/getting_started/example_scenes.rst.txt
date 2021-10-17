@@ -1,12 +1,11 @@
-Example Scenes
+样例学习
 ==============
 
-After understanding the previous knowledge, we can understand more scenes.
-Many example scenes are given in ``example_scenes.py``, let's start with
-the simplest and one by one.
+在了解了前面的知识后，我们可以运行更多的场景了。
+``example_scenes.py`` 中给出了许多示例场景，让我们从简单的开始一个一个研究。
 
-InteractiveDevlopment
----------------------
+交互开发InteractiveDevlopment
+-----------------------------------
 
 .. manim-example:: InteractiveDevelopment
     :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/InteractiveDevelopment.mp4
@@ -23,14 +22,11 @@ InteractiveDevlopment
             self.play(ShowCreation(square))
             self.wait()
 
-            # This opens an iPython termnial where you can keep writing
-            # lines as if they were part of this construct method.
-            # In particular, 'square', 'circle' and 'self' will all be
-            # part of the local namespace in that terminal.
+            # 这会打开一个iPython终端，你可以在其中继续写你想要执行的代码
+            # 在这个例子中，square/circle/self都会成为终端中的实例
             self.embed()
 
-            # Try copying and pasting some of the lines below into
-            # the interactive shell
+            # 尝试拷贝粘贴下面这些行到交互终端中
             self.play(ReplacementTransform(square, circle))
             self.wait()
             self.play(circle.animate.stretch(4, 0))
@@ -43,27 +39,22 @@ InteractiveDevlopment
             """)
             self.play(Write(text))
 
-            # In the interactive shell, you can just type
-            # play, add, remove, clear, wait, save_state and restore,
-            # instead of self.play, self.add, self.remove, etc.
+            # 在交互终端中，你可以使用play, add, remove, clear, wait, save_state
+            # 和restore来代替self.play, self.add, self.remove……
 
-            # To interact with the window, type touch().  You can then
-            # scroll in the window, or zoom by holding down 'z' while scrolling,
-            # and change camera perspective by holding down 'd' while moving
-            # the mouse.  Press 'r' to reset to the standard camera position.
-            # Press 'q' to stop interacting with the window and go back to
-            # typing new commands into the shell.
+            # 这时如果要使用鼠标键盘来与窗口互动，需要输入执行touch()
+            # 然后你就可以滚动窗口，或者在按住z时滚动来缩放
+            # 按住d时移动鼠标来更改相机视角，按r重置相机位置
+            # 按q退出和窗口的交互来继续输入其他代码
 
-            # In principle you can customize a scene to be responsive to
-            # mouse and keyboard interactions
+            # 特别的，你可以自定一个场景来和鼠标和键盘互动
             always(circle.move_to, self.mouse_point)
 
-This scene is similar to what we wrote in :doc:`quickstart`.
-And how to interact has been written in the comments.
-No more explanation here.
+这个场景就是我们在 :doc:`quickstart` 中编写的。
+这里不再解释。
 
-AnimatingMethods
-----------------
+方法动画AnimatingMethods
+----------------------------
 
 .. manim-example:: AnimatingMethods
     :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/AnimatingMethods.mp4
@@ -73,21 +64,16 @@ AnimatingMethods
             grid = Tex(r"\pi").get_grid(10, 10, height=4)
             self.add(grid)
 
-            # You can animate the application of mobject methods with the
-            # ".animate" syntax:
+            # 你可以通过.animate语法来动画化物件变换方法
             self.play(grid.animate.shift(LEFT))
 
-            # Alternatively, you can use the older syntax by passing the
-            # method and then the arguments to the scene's "play" function:
+            # 或者你可以使用旧的语法，把方法和参数同时传给Scene.play
             self.play(grid.shift, LEFT)
 
-            # Both of those will interpolate between the mobject's initial
-            # state and whatever happens when you apply that method.
-            # For this example, calling grid.shift(LEFT) would shift the
-            # grid one unit to the left, but both of the previous calls to
-            # "self.play" animate that motion.
+            # 这两种方法都会在mobject的初始状态和应用该方法后的状态间进行插值
+            # 在本例中，调用grid.shift(LEFT)会将grid向左移动一个单位
 
-            # The same applies for any method, including those setting colors.
+            # 这种用法可以用在任何方法上，包括设置颜色
             self.play(grid.animate.set_color(YELLOW))
             self.wait()
             self.play(grid.animate.set_submobject_colors_by_gradient(BLUE, GREEN))
@@ -95,14 +81,13 @@ AnimatingMethods
             self.play(grid.animate.set_height(TAU - MED_SMALL_BUFF))
             self.wait()
 
-            # The method Mobject.apply_complex_function lets you apply arbitrary
-            # complex functions, treating the points defining the mobject as
-            # complex numbers.
+            # 方法Mobject.apply_complex_function允许应用任意的复函数
+            # 将把Mobject的所有点的坐标看作复数
+
             self.play(grid.animate.apply_complex_function(np.exp), run_time=5)
             self.wait()
 
-            # Even more generally, you could apply Mobject.apply_function,
-            # which takes in functions form R^3 to R^3
+            # 更一般地说，你可以应用Mobject.apply方法，它接受从R^3到R^3的一个函数
             self.play(
                 grid.animate.apply_function(
                     lambda p: [
@@ -115,21 +100,21 @@ AnimatingMethods
             )
             self.wait()
 
-The new usage in this scene is ``.get_grid()`` and ``self.play(mob.animate.method(args))``.
+这个场景中新出现的用法是``.get_grid()`` 和 ``self.play(mob.animate.method(args))``:
 
-- ``.get_grid()`` method will return a new mobject containing multiple copies of this one arranged in a grid.
-- ``self.play(mob.animate.method(args))`` animates the method, and the details are in the comments above.
+- ``.get_grid()`` 方法会返回一个由该物体复制得到的阵列
+- ``self.play(mob.animate.method(args))`` 动画化方法，详细用法在上面代码注释中说明了
 
-TextExample
------------
+文字示例TextExample
+----------------------
 
 .. manim-example:: TextExample
     :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/TextExample.mp4
 
     class TextExample(Scene):
         def construct(self):
-            # To run this scene properly, you should have "Consolas" font in your computer
-            # for full usage, you can see https://github.com/3b1b/manim/pull/680
+            # 想要正确运行这个场景，你需要确保你的计算机中安装了Consolas字体
+            # 关于Text全部用法，请见https://github.com/3b1b/manim/pull/680
             text = Text("Here is a text", font="Consolas", font_size=90)
             difference = Text(
                 """
@@ -137,7 +122,7 @@ TextExample
                 you can change the font more easily, but can't use the LaTeX grammar
                 """,
                 font="Arial", font_size=24,
-                # t2c is a dict that you can choose color for different text
+                # t2c是一个由 文本-颜色 键值对组成的字典
                 t2c={"Text": BLUE, "TexText": BLUE, "LaTeX": ORANGE}
             )
             VGroup(text, difference).arrange(DOWN, buff=1)
@@ -166,39 +151,36 @@ TextExample
             self.play(Write(slant))
             self.wait()
 
-The new classes in this scene are ``Text``, ``VGroup``, ``Write``, ``FadeIn`` and ``FadeOut``.
+这个场景中新出现的类是 ``Text``，``VGroup``，``Write``，``FadeIn`` 和 ``FadeOut``：
 
-- ``Text`` can create text, define fonts, etc. The usage ais clearly reflected in the above examples.
-- ``VGroup`` can put multiple ``VMobject`` together as a whole. In the example, the ``.arrange()`` method is called to arrange the sub-mobjects in sequence downward (``DOWN``), and the spacing is ``buff``.
-- ``Write`` is an animation that shows similar writing effects.
-- ``FadeIn`` fades the object in, the second parameter indicates the direction of the fade in.
-- ``FadeOut`` fades out the object, the second parameter indicates the direction of the fade out.
+- ``Text`` 可以创建文字，定义字体等。相关特性在上述例子中已经清晰体现。
+- ``VGroup`` 可以将多个 ``VMobject`` 放在一起看做一个整体。例子中调用了 ``arrange()`` 方法来将其中子物体依次向下排列（``DOWN``），且间距为 ``buff``
+- ``Write`` 是显示类似书写效果的动画
+- ``FadeIn`` 将物体淡入，第二个参数表示淡入的方向
+- ``FadeOut`` 将物体淡出，第二个参数表示淡出的方向
 
-TexTransformExample
--------------------
+
+.. _匹配变换TexTransformExample:
+
+匹配变换TexTransformExample
+-----------------------------
 
 .. manim-example:: TexTransformExample
-    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/TexTransformExample.mp4
+   :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/TexTransformExample.mp4
 
     class TexTransformExample(Scene):
         def construct(self):
             to_isolate = ["B", "C", "=", "(", ")"]
             lines = VGroup(
-                # Passing in muliple arguments to Tex will result
-                # in the same expression as if those arguments had
-                # been joined together, except that the submobject
-                # hierarchy of the resulting mobject ensure that the
-                # Tex mobject has a subject corresponding to
-                # each of these strings.  For example, the Tex mobject
-                # below will have 5 subjects, corresponding to the
-                # expressions [A^2, +, B^2, =, C^2]
+                # 将多个参数传递给Tex，这些参数看起来被连接在一起作为一个表达式
+                # 但整个mobject的每个submobject为其中的一个字符串
+                # 例如，下面的Tex物件将有5个子物件，对应于表达式[A^2，+，B^2，=，C^2]
                 Tex("A^2", "+", "B^2", "=", "C^2"),
-                # Likewise here
+                # 这里同理
                 Tex("A^2", "=", "C^2", "-", "B^2"),
-                # Alternatively, you can pass in the keyword argument
-                # "isolate" with a list of strings that should be out as
-                # their own submobject.  So the line below is equivalent
-                # to the commented out line below it.
+                # 或者，你可以传入关键字参数isolate，其中包含一个字符串列表
+                # 这些字符串应该作为它们自己的子物件存在
+                # 因此，下面的一行相当于它下面注释掉的一行
                 Tex("A^2 = (C + B)(C - B)", isolate=["A^2", *to_isolate]),
                 # Tex("A^2", "=", "(", "C", "+", "B", ")", "(", "C", "-", "B", ")"),
                 Tex("A = \\sqrt{(C + B)(C - B)}", isolate=["A", *to_isolate])
@@ -213,11 +195,8 @@ TexTransformExample
 
             play_kw = {"run_time": 2}
             self.add(lines[0])
-            # The animation TransformMatchingTex will line up parts
-            # of the source and target which have matching tex strings.
-            # Here, giving it a little path_arc makes each part sort of
-            # rotate into their final positions, which feels appropriate
-            # for the idea of rearranging an equation
+            # TransformMatchingTex将源和目标中具有匹配tex字符串的部分对应变换
+            # 传入path_arc，使每个部分旋转到它们的最终位置，这种效果对于重新排列一个方程是很好的
             self.play(
                 TransformMatchingTex(
                     lines[0].copy(), lines[1],
@@ -227,17 +206,13 @@ TexTransformExample
             )
             self.wait()
 
-            # Now, we could try this again on the next line...
             self.play(
                 TransformMatchingTex(lines[1].copy(), lines[2]),
                 **play_kw
             )
             self.wait()
-            # ...and this looks nice enough, but since there's no tex
-            # in lines[2] which matches "C^2" or "B^2", those terms fade
-            # out to nothing while the C and B terms fade in from nothing.
-            # If, however, we want the C^2 to go to C, and B^2 to go to B,
-            # we can specify that with a key map.
+            # …这看起来很好，但由于在lines[2]中没有匹配"C^2"或"B^2"的tex，这些子物件会淡出
+            # 而C和B两个子物件会淡入，如果我们希望C^2转到C，而B^2转到B，我们可以用key_map来指定
             self.play(FadeOut(lines[2]))
             self.play(
                 TransformMatchingTex(
@@ -251,15 +226,10 @@ TexTransformExample
             )
             self.wait()
 
-            # And to finish off, a simple TransformMatchingShapes would work
-            # just fine.  But perhaps we want that exponent on A^2 to transform into
-            # the square root symbol.  At the moment, lines[2] treats the expression
-            # A^2 as a unit, so we might create a new version of the same line which
-            # separates out just the A.  This way, when TransformMatchingTex lines up
-            # all matching parts, the only mismatch will be between the "^2" from
-            # new_line2 and the "\sqrt" from the final line.  By passing in,
-            # transform_mismatches=True, it will transform this "^2" part into
-            # the "\sqrt" part.
+            # 也许我们想把^2上的指数转换成根号。目前，lines[2]将表达式A^2视为一个单元
+            # 因此我们可能会需要创建同一line的新版本，该line仅分隔出A
+            # 这样，当TransformMatchingTex将所有匹配的部分对应时，唯一的不匹配将是来自new_line2的"^2"
+            # 和来自最终行的"\sqrt"之间的不匹配。通过传入transform_missmatches=True，它会将此"^2"转换为"\sqrt"
             new_line2 = Tex("A^2 = (C + B)(C - B)", isolate=["A", *to_isolate])
             new_line2.replace(lines[2])
             new_line2.match_style(lines[2])
@@ -274,12 +244,9 @@ TexTransformExample
             self.wait(3)
             self.play(FadeOut(lines, RIGHT))
 
-            # Alternatively, if you don't want to think about breaking up
-            # the tex strings deliberately, you can TransformMatchingShapes,
-            # which will try to line up all pieces of a source mobject with
-            # those of a target, regardless of the submobject hierarchy in
-            # each one, according to whether those pieces have the same
-            # shape (as best it can).
+            # 或者，如果您不想故意分解tex字符串，您可以使用TransformMatchingShapes
+            # 它将尝试将源mobject的所有部分与目标的部分对齐，而不考虑每个部分中的子对象层次结构
+            # 根据这些部分是否具有相同的形状（尽其所能）来自动匹配变换
             source = Text("the morse code", height=1)
             target = Text("here come dots", height=1)
 
@@ -291,30 +258,27 @@ TexTransformExample
             self.play(TransformMatchingShapes(target, source, **kw))
             self.wait()
 
-The new classes in this scene are ``Tex``, ``TexText``, ``TransformMatchingTex``
-and ``TransformMatchingShapes``.
+这个场景中新出现的类是 ``Tex``，``TexText``，``TransformMatchingTex``
+和 ``TransformMatchingShapes``：
 
-- ``Tex`` uses LaTeX to create mathematical formulas.
-- ``TexText`` uses LaTeX to create text.
-- ``TransformMatchingTeX`` automatically transforms sub-objects according to the similarities and differences of tex in ``Tex``.
-- ``TransformMatchingShapes`` automatically transform sub-objects directly based on the similarities and differences of the object point sets.
+- ``Tex`` 利用LaTeX来创建数学公式
+- ``TexText`` 利用LaTeX来创建文字
+- ``TransformMatchingTeX`` 根据 ``Tex`` 中tex的异同来自动对子物体进行 ``Transform``
+- ``TransformMatchingShapes`` 直接根据物体点集的异同来自动对子物体进行 ``Transform``
 
-UpdatersExample
----------------
+更新程序UpdatersExample
+--------------------------
 
 .. manim-example:: UpdatersExample
-    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/UpdatersExample.mp4
+   :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/UpdatersExample.mp4
 
     class UpdatersExample(Scene):
         def construct(self):
             square = Square()
             square.set_fill(BLUE_E, 1)
-
-            # On all all frames, the constructor Brace(square, UP) will
-            # be called, and the mobject brace will set its data to match
-            # that of the newly constructed object
+        
             brace = always_redraw(Brace, square, UP)
-
+        
             text, number = label = VGroup(
                 Text("Width = "),
                 DecimalNumber(
@@ -325,25 +289,12 @@ UpdatersExample
                 )
             )
             label.arrange(RIGHT)
-
-            # This ensures that the method deicmal.next_to(square)
-            # is called on every frame
+        
             always(label.next_to, brace, UP)
-            # You could also write the following equivalent line
-            # label.add_updater(lambda m: m.next_to(brace, UP))
-
-            # If the argument itself might change, you can use f_always,
-            # for which the arguments following the initial Mobject method
-            # should be functions returning arguments to that method.
-            # The following line ensures that decimal.set_value(square.get_y())
-            # is called every frame
             f_always(number.set_value, square.get_width)
-            # You could also write the following equivalent line
-            # number.add_updater(lambda m: m.set_value(square.get_width()))
-
+        
             self.add(square, brace, label)
-
-            # Notice that the brace and label track with the square
+        
             self.play(
                 square.animate.scale(2),
                 rate_func=there_and_back,
@@ -360,11 +311,7 @@ UpdatersExample
                 run_time=3
             )
             self.wait()
-
-            # In general, you can alway call Mobject.add_updater, and pass in
-            # a function that you want to be called on every frame.  The function
-            # should take in either one argument, the mobject, or two arguments,
-            # the mobject and the amount of time since the last frame.
+        
             now = self.time
             w0 = square.get_width()
             square.add_updater(
@@ -372,20 +319,19 @@ UpdatersExample
             )
             self.wait(4 * PI)
 
-The new classes and usage in this scene are ``always_redraw()``, ``DecimalNumber``, ``.to_edge()``,
-``.center()``, ``always()``, ``f_always()``, ``.set_y()`` and ``.add_updater()``.
+这个场景中新出现的类和用法是 ``DecimalNumber``，``.to_edge()``，``.center()``，
+``always()``，``f_always()``，``.set_y()`` 和 ``.add_updater()``：
 
-- ``always_redraw()`` function create a new mobject every frame.
-- ``DecimalNumber`` is a variable number, speed it up by breaking it into ``Text`` characters.
-- ``.to_edge()`` means to place the object on the edge of the screen.
-- ``.center()`` means to place the object in the center of the screen.
-- ``always(f, x)`` means that a certain function (``f(x)``) is executed every frame.
-- ``f_always(f, g)`` is similar to ``always``, executed ``f(g())`` every frame.
-- ``.set_y()`` means to set the ordinate of the object on the screen.
-- ``.add_updater()`` sets an update function for the object. For example: ``mob1.add_updater(lambda mob: mob.next_to(mob2))`` means ``mob1.next_to(mob2)`` is executed every frame.
+- ``DecimalNumber`` 是一个可变数字，通过将其拆成一个个 ``Tex`` 字符来加快速度
+- ``.to_edge()`` 表示将该物体放到画面的边位置
+- ``.center()`` 表示将该物体置于画面中间
+- ``always(f, x)`` 表示每帧都执行 ``f(x)``
+- ``f_always(f, g)`` 类似 ``always``，每帧都执行 ``f(g())``
+- ``.set_y()`` 表示设置该物体在画面上的的纵坐标
+- ``.add_updater()`` 为该物体设置一个更新函数。例如：``mob1.add_updater(lambda mob: mob.next_to(mob2))`` 表示每帧都执行 ``mob1.next_to(mob2)``
 
-CoordinateSystemExample
------------------------
+坐标系统CoordinateSystemExample
+----------------------------------
 
 .. manim-example:: CoordinateSystemExample
     :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/CoordinateSystemExample.mp4
@@ -393,39 +339,32 @@ CoordinateSystemExample
     class CoordinateSystemExample(Scene):
         def construct(self):
             axes = Axes(
-                # x-axis ranges from -1 to 10, with a default step size of 1
+                # x轴的范围从-1到10，步长为1
                 x_range=(-1, 10),
-                # y-axis ranges from -2 to 2 with a step size of 0.5
+                # y轴的范围从-2到2，步长为0.5y-axis ranges from -2 to 10 with a step size of 0.5
                 y_range=(-2, 2, 0.5),
-                # The axes will be stretched so as to match the specified
-                # height and width
+                # 坐标系将会伸缩来匹配指定的height和width
                 height=6,
                 width=10,
-                # Axes is made of two NumberLine mobjects.  You can specify
-                # their configuration with axis_config
+                # Axes由两个NumberLine组成，你可以通过axis_config来指定它们的样式
                 axis_config={
                     "stroke_color": GREY_A,
                     "stroke_width": 2,
                 },
-                # Alternatively, you can specify configuration for just one
-                # of them, like this.
+                # 或者，你也可以像这样分别指定各个坐标轴的样式
                 y_axis_config={
                     "include_tip": False,
                 }
             )
-            # Keyword arguments of add_coordinate_labels can be used to
-            # configure the DecimalNumber mobjects which it creates and
-            # adds to the axes
+            # add_coordinate_labels方法的关键字参数可以传入DecimalNumber来指定它的样式
             axes.add_coordinate_labels(
                 font_size=20,
                 num_decimal_places=1,
             )
             self.add(axes)
 
-            # Axes descends from the CoordinateSystem class, meaning
-            # you can call call axes.coords_to_point, abbreviated to
-            # axes.c2p, to associate a set of coordinates with a point,
-            # like so:
+            # Axes从CoordinateSystem类派生而来，意思是可以调用Axes.coords_to_point
+            # （缩写为Axes.c2p）将一组坐标与一个点相关联，如下所示：
             dot = Dot(color=RED)
             dot.move_to(axes.c2p(0, 0))
             self.play(FadeIn(dot, scale=0.5))
@@ -434,13 +373,11 @@ CoordinateSystemExample
             self.play(dot.animate.move_to(axes.c2p(5, 0.5)))
             self.wait()
 
-            # Similarly, you can call axes.point_to_coords, or axes.p2c
+            # 同样，你可以调用Axes.point_to_coords（缩写Axes.p2c）
             # print(axes.p2c(dot.get_center()))
 
-            # We can draw lines from the axes to better mark the coordinates
-            # of a given point.
-            # Here, the always_redraw command means that on each new frame
-            # the lines will be redrawn
+            # 我们可以从轴上画线，以便更好地标记给定点的坐标在这里
+            # always_redraw命令意味着在每一个新帧上重新绘制线来保证线始终跟随着点移动
             h_line = always_redraw(lambda: axes.get_h_line(dot.get_left()))
             v_line = always_redraw(lambda: axes.get_v_line(dot.get_bottom()))
 
@@ -453,9 +390,7 @@ CoordinateSystemExample
             self.play(dot.animate.move_to(axes.c2p(1, 1)))
             self.wait()
 
-            # If we tie the dot to a particular set of coordinates, notice
-            # that as we move the axes around it respects the coordinate
-            # system defined by them.
+            # 如果我们把这个点固定在一个特定的坐标上，当我们移动轴时，它也会跟随坐标系移动
             f_always(dot.move_to, lambda: axes.c2p(1, 1))
             self.play(
                 axes.animate.scale(0.75).to_corner(UL),
@@ -464,12 +399,11 @@ CoordinateSystemExample
             self.wait()
             self.play(FadeOut(VGroup(axes, dot, h_line, v_line)))
 
-            # Other coordinate systems you can play around with include
-            # ThreeDAxes, NumberPlane, and ComplexPlane.
+            # manim还有一些其它的坐标系统：ThreeDAxes，NumberPlane，ComplexPlane
 
 
-GraphExample
-------------
+函数图像GraphExample
+---------------------
 
 .. manim-example:: GraphExample
     :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/GraphExample.mp4
@@ -481,31 +415,28 @@ GraphExample
 
             self.play(Write(axes, lag_ratio=0.01, run_time=1))
 
-            # Axes.get_graph will return the graph of a function
+            # Axes.get_graph会返回传入方程的图像
             sin_graph = axes.get_graph(
                 lambda x: 2 * math.sin(x),
                 color=BLUE,
             )
-            # By default, it draws it so as to somewhat smoothly interpolate
-            # between sampled points (x, f(x)).  If the graph is meant to have
-            # a corner, though, you can set use_smoothing to False
+            # 默认情况下，它在所有采样点(x, f(x))之间稍微平滑地插值
+            # 但是，如果图形有棱角，可以将use_smoothing设为False
             relu_graph = axes.get_graph(
                 lambda x: max(x, 0),
                 use_smoothing=False,
                 color=YELLOW,
             )
-            # For discontinuous functions, you can specify the point of
-            # discontinuity so that it does not try to draw over the gap.
+            # 对于不连续的函数，你可以指定间断点来让它不试图填补不连续的位置
             step_graph = axes.get_graph(
                 lambda x: 2.0 if x > 3 else 1.0,
                 discontinuities=[3],
                 color=GREEN,
             )
 
-            # Axes.get_graph_label takes in either a string or a mobject.
-            # If it's a string, it treats it as a LaTeX expression.  By default
-            # it places the label next to the graph near the right side, and
-            # has it match the color of the graph
+            # Axes.get_graph_label可以接受字符串或者mobject。如果传入的是字符串
+            # 那么将将其当作LaTeX表达式传入Tex中
+            # 默认下，label将生成在图像的右侧，并且匹配图像的颜色
             sin_label = axes.get_graph_label(sin_graph, "\\sin(x)")
             relu_label = axes.get_graph_label(relu_graph, Text("ReLU"))
             step_label = axes.get_graph_label(step_graph, Text("Step"), x=4)
@@ -535,15 +466,13 @@ GraphExample
             )
             self.wait()
 
-            # You can use axes.input_to_graph_point, abbreviated
-            # to axes.i2gp, to find a particular point on a graph
+            # 你可以使用Axes.input_to_graph_point（缩写Axes.i2gp）来找到图像上的一个点
             dot = Dot(color=RED)
             dot.move_to(axes.i2gp(2, parabola))
             self.play(FadeIn(dot, scale=0.5))
 
-            # A value tracker lets us animate a parameter, usually
-            # with the intent of having other mobjects update based
-            # on the parameter
+            # ValueTracker存储一个数值，可以帮助我们制作可变参数的动画
+            # 通常使用updater或者f_always让其它mobject根据其中的数值来更新
             x_tracker = ValueTracker(2)
             f_always(
                 dot.move_to,
@@ -554,11 +483,12 @@ GraphExample
             self.play(x_tracker.animate.set_value(-2), run_time=3)
             self.wait()
 
-SurfaceExample
---------------
+
+三维示例SurfaceExample
+------------------------
 
 .. manim-example:: SurfaceExample
-    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/SurfaceExample.mp4
+   :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/SurfaceExample.mp4
 
     class SurfaceExample(Scene):
         CONFIG = {
@@ -575,12 +505,10 @@ SurfaceExample
             torus1 = Torus(r1=1, r2=1)
             torus2 = Torus(r1=3, r2=1)
             sphere = Sphere(radius=3, resolution=torus1.resolution)
-            # You can texture a surface with up to two images, which will
-            # be interpreted as the side towards the light, and away from
-            # the light.  These can be either urls, or paths to a local file
-            # in whatever you've set as the image directory in
-            # the custom_config.yml file
-
+            
+            # 你可以使用最多两个图像对曲面进行纹理处理，
+            # 这两个图像将被解释为朝向灯光的一侧和远离灯光的一侧。
+            # 这些可以是URL，也可以是指向本地文件的路径
             # day_texture = "EarthTextureMap"
             # night_texture = "NightEarthTextureMap"
             day_texture = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Whole_world_-_land_and_oceans.jpg/1280px-Whole_world_-_land_and_oceans.jpg"
@@ -596,7 +524,7 @@ SurfaceExample
                 mob.mesh = SurfaceMesh(mob)
                 mob.mesh.set_stroke(BLUE, 1, opacity=0.5)
 
-            # Set perspective
+            # 设置视角
             frame = self.camera.frame
             frame.set_euler_angles(
                 theta=-30 * DEGREES,
@@ -623,15 +551,15 @@ SurfaceExample
 
             self.play(
                 Transform(surface, surfaces[2]),
-                # Move camera frame during the transition
-                frame.animate.increment_phi(-10 * DEGREES),
-                frame.animate.increment_theta(-20 * DEGREES),
+                # 在过渡期间移动相机帧
+                frame.increment_phi, -10 * DEGREES,
+                frame.increment_theta, -20 * DEGREES,
                 run_time=3
             )
-            # Add ambient rotation
+            # 添加自动旋转相机帧
             frame.add_updater(lambda m, dt: m.increment_theta(-0.1 * dt))
 
-            # Play around with where the light is
+            # 移动光源
             light_text = Text("You can move around the light source")
             light_text.move_to(surface_text)
             light_text.fix_in_frame()
@@ -640,8 +568,8 @@ SurfaceExample
             light = self.camera.light_source
             self.add(light)
             light.save_state()
-            self.play(light.animate.move_to(3 * IN), run_time=5)
-            self.play(light.animate.shift(10 * OUT), run_time=5)
+            self.play(light.move_to, 3 * IN, run_time=5)
+            self.play(light.shift, 10 * OUT, run_time=5)
 
             drag_text = Text("Try moving the mouse while pressing d or s")
             drag_text.move_to(light_text)
@@ -650,77 +578,104 @@ SurfaceExample
             self.play(FadeTransform(light_text, drag_text))
             self.wait()
 
-This scene shows an example of using a three-dimensional surface, and
-the related usage has been briefly described in the notes.
+这个场景展示了使用三维面的例子，相关用法已经在注释中简要叙述。
 
-- ``.fix_in_frame()`` makes the object not change with the view angle of the screen, and is always displayed at a fixed position on the screen.
+- ``.fix_in_frame()`` 使该物体不随画面视角变化而变化，一直显示在画面上的固定位置
 
-OpeningManimExample
--------------------
+整体示例OpeningManimExample
+-----------------------------
 
 .. manim-example:: OpeningManimExample
-    :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/OpeningManimExample.mp4
-
+   :media: https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/example_scenes/OpeningManimExample.mp4
 
     class OpeningManimExample(Scene):
         def construct(self):
-            intro_words = Text("""
-                The original motivation for manim was to
-                better illustrate mathematical functions
-                as transformations.
-            """)
-            intro_words.to_edge(UP)
+            title = TexText("This is some \\LaTeX")
+            basel = Tex(
+                "\\sum_{n=1}^\\infty "
+                "\\frac{1}{n^2} = \\frac{\\pi^2}{6}"
+            )
+            VGroup(title, basel).arrange(DOWN)
+            self.play(
+                Write(title),
+                FadeIn(basel, UP),
+            )
+            self.wait()
 
-            self.play(Write(intro_words))
-            self.wait(2)
+            transform_title = Text("That was a transform")
+            transform_title.to_corner(UL)
+            self.play(
+                Transform(title, transform_title),
+                LaggedStartMap(FadeOut, basel, shift=DOWN),
+            )
+            self.wait()
 
-            # Linear transform
+            fade_comment = Text(
+                """
+                You probably don't want to overuse
+                Transforms, though, a simple fade often
+                looks nicer.
+                """,
+                font_size=36,
+                color=GREY_B,
+            )
+            fade_comment.next_to(
+                transform_title, DOWN,
+                buff=LARGE_BUFF,
+                aligned_edge=LEFT
+            )
+            self.play(FadeIn(fade_comment, shift=DOWN))
+            self.wait(3)
+
             grid = NumberPlane((-10, 10), (-5, 5))
+            grid_title = Text(
+                "But manim is for illustrating math, not text",
+            )
+            grid_title.to_edge(UP)
+            grid_title.add_background_rectangle()
+
+            self.add(grid, grid_title)  # Make sure title is on top of grid
+            self.play(
+                FadeOut(title, shift=LEFT),
+                FadeOut(fade_comment, shift=LEFT),
+                FadeIn(grid_title),
+                ShowCreation(grid, run_time=3, lag_ratio=0.1),
+            )
+            self.wait()
+
             matrix = [[1, 1], [0, 1]]
-            linear_transform_words = VGroup(
+            linear_transform_title = VGroup(
                 Text("This is what the matrix"),
                 IntegerMatrix(matrix, include_background_rectangle=True),
                 Text("looks like")
             )
-            linear_transform_words.arrange(RIGHT)
-            linear_transform_words.to_edge(UP)
-            linear_transform_words.set_stroke(BLACK, 10, background=True)
+            linear_transform_title.arrange(RIGHT)
+            linear_transform_title.to_edge(UP)
 
             self.play(
-                ShowCreation(grid),
-                FadeTransform(intro_words, linear_transform_words)
+                FadeOut(grid_title),
+                FadeIn(linear_transform_title),
             )
-            self.wait()
-            self.play(grid.animate.apply_matrix(matrix), run_time=3)
+            self.play(grid.apply_matrix, matrix, run_time=3)
             self.wait()
 
-            # Complex map
-            c_grid = ComplexPlane()
-            moving_c_grid = c_grid.copy()
-            moving_c_grid.prepare_for_nonlinear_transform()
-            c_grid.set_stroke(BLUE_E, 1)
-            c_grid.add_coordinate_labels(font_size=24)
-            complex_map_words = TexText("""
-                Or thinking of the plane as $\\mathds{C}$,\\\\
-                this is the map $z \\rightarrow z^2$
-            """)
-            complex_map_words.to_corner(UR)
-            complex_map_words.set_stroke(BLACK, 5, background=True)
-
+            grid_transform_title = Text(
+                "And this is a nonlinear transformation"
+            )
+            grid_transform_title.set_stroke(BLACK, 5, background=True)
+            grid_transform_title.to_edge(UP)
+            grid.prepare_for_nonlinear_transform(100)
             self.play(
-                FadeOut(grid),
-                Write(c_grid, run_time=3),
-                FadeIn(moving_c_grid),
-                FadeTransform(linear_transform_words, complex_map_words),
+                ApplyPointwiseFunction(
+                    lambda p: p + np.array([np.sin(p[1]), np.sin(p[0]), 0]),
+                    grid,
+                    run_time=5,
+                ),
+                FadeOut(linear_transform_title),
+                FadeIn(grid_transform_title),
             )
             self.wait()
-            self.play(
-                moving_c_grid.animate.apply_complex_function(lambda z: z**2),
-                run_time=6,
-            )
-            self.wait(2)
 
-This scene is a comprehensive application of a two-dimensional scene.
+这个场景是一个二维场景的综合运用
 
-After seeing these scenes, you have already understood part of the
-usage of manim. For more examples, see `the video code of 3b1b <https://github.com/3b1b/videos>`_.
+在看过这些场景后，你就已经了解了manim的部分用法了。更多的例子可以看 `3b1b的视频代码 <https://github.com/3b1b/videos>`_。

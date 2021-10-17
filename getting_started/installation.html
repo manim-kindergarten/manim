@@ -2,15 +2,15 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Quick Start" href="quickstart.html" /><link rel="prev" title="Manim’s documentation" href="../index.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="快速入门" href="quickstart.html" /><link rel="prev" title="Manim shaders版本教程文档" href="../index.html" />
 
-    <link rel="shortcut icon" href="../_static/icon.png"/><meta name="generator" content="sphinx-3.0.3, furo 2020.10.05.beta9"/>
-        <title>Installation - manim  documentation</title>
+    <link rel="shortcut icon" href="../_static/mk.png"/><meta name="generator" content="sphinx-3.0.3, furo 2020.10.05.beta9"/>
+        <title>安装指南 - manim shaders  文档</title>
       <link rel="stylesheet" href="../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../_static/styles/default.css?5403a5bb92569b6e286618a8">
-    <link rel="stylesheet" href="../_static/pygments.css?5403a5bb92569b6e286618a8">
+    <link rel="stylesheet" href="../_static/styles/default.css?31119ee3bd4efcd54815def3">
+    <link rel="stylesheet" href="../_static/pygments.css?31119ee3bd4efcd54815def3">
     
 <style>
   :root {
@@ -27,7 +27,9 @@
         <script src="../_static/language_data.js" defer></script>
       
         <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script><script src="../_static/scripts/main.js?5403a5bb92569b6e286618a8"></script></head>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../_static/scripts/main.js?31119ee3bd4efcd54815def3"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -72,7 +74,7 @@
     <label class="header-left nav-overlay-icon" for="__navigation">
       <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
     </label>
-    <div class="header-center"><div class="brand">manim  documentation</div></div>
+    <div class="header-center"><div class="brand">manim shaders  文档</div></div>
     <div class="header-right"></div>
   </header>
   <aside class="sidebar-drawer">
@@ -80,7 +82,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="../_static/transparent_graph.png" alt="Logo"/>
+    <img class="sidebar-logo" src="../_static/Logo_white.png" alt="Logo"/>
   </div>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html">
@@ -88,26 +90,104 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-tree sidebar-scroll">
-  <p><span class="caption-text">Getting Started</span></p>
+  <p><span class="caption-text">入门教程</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">CLI flags and configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_scenes.html">Example Scenes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">CONFIG dictionary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Manim’s structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">命令行参数和配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_scenes.html">样例学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">CONFIG字典用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Manim结构</a></li>
 </ul>
-<p><span class="caption-text">Documentation</span></p>
+<p><span class="caption-text">进阶文档</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/constants.html">constants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/custom_config.html">custom_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/constants.html">常量部分 constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/custom_config.html">默认配置 custom_config</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/animation/index.html">动画部分 animation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/creation.html">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/fading.html">Fading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/growing.html">Growing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/indication.html">Indication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/movement.html">Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/rotation.html">Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/transform.html">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/transform_matching_parts.html">Transform Matching Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/update.html">Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/composition.html">Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/animation/specialized.html">Specialized</a></li>
 </ul>
-<p><span class="caption-text">Development</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/camera/index.html">相机部分 camera</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/camera/camera.html">Camera</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/mobject/index.html">数学物件 Mobject</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/mobject/types/index.html">types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label for="toctree-checkbox-4"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/dot_cloud.html">Dot Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/image_mobject.html">Image Mobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/point_cloud_mobject.html">Point Cloud Mobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/surface.html">Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/types/vectorized_mobject.html">Vectorized Mobject</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/mobject/svg/index.html">svg</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label for="toctree-checkbox-5"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/brace.html">Brace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/drawings.html">Drawings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/svg_mobject.html">SVGMobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/tex_mobject.html">Tex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/mobject/svg/text_mobject.html">Text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/changing.html">Changing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/coordinate_systems.html">CoordinateSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/frame.html">Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/geometry.html">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/interactive.html">Interactive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/matrix.html">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/mobject.html">Mobject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/mobject_update_utils.html">MobjectUpdateUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/number_line.html">NumberLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/probability.html">Probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/shape_matchers.html">ShapeMatchers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/three_dimensions.html">ThreeDimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/value_tracker.html">ValueTracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/mobject/vector_field.html">VectorField</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/scene/index.html">场景部分 scene</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label for="toctree-checkbox-6"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/scene_file_writer.html">SceneFileWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/three_d_scene.html">ThreeDScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/sample_space_scene.html">SampleSpaceScene(TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/scene/vector_space_scene.html">VectorScene</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/shaders/index.html">Shaders (TODO)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/utils/index.html">工具函数 utils</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label for="toctree-checkbox-7"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/bezier.html">Bezier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/color.html">Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/config_ops.html">CONFIG_ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/file_ops.html">FILE_ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/iterables.html">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/paths.html">Paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/rate_functions.html">Rate_functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/simple_functions.html">Simple_functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/sounds.html">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/space_ops.html">Space_ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/utils/tex_file_writing.html">Tex_file_writing</a></li>
+</ul>
+</li>
+</ul>
+<p><span class="caption-text">开发相关</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../development/changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../development/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/changelog.html">变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/about.html">关于</a></li>
 </ul>
 
 </div>
@@ -121,47 +201,45 @@
         <label class="toc-overlay-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Manim runs on Python 3.6 or higher (Python 3.8 is recommended).</p>
-<p>System requirements are：</p>
+        <section id="id1">
+<h1>安装指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Manim运行在Python 3.6或者更高版本上（推荐使用Python 3.8）</p>
+<p>另外，不是特别推荐在 WSL 上安装 manimgl，因为 manimgl 在 <strong>预览时</strong> 不可避免地会调用 Pyglet Window 这个库，而这个库需要 GUI。不少用户为此花费大量的心血寻找解决方案，但真正解决的少之又少 qwq</p>
+<p>所需的系统依赖有：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ffmpeg.org/">FFmpeg</a></p></li>
-<li><p><a class="reference external" href="https://www.opengl.org//">OpenGL</a> (included in python package <code class="docutils literal notranslate"><span class="pre">PyOpenGL</span></code>)</p></li>
-<li><p><a class="reference external" href="https://www.latex-project.org">LaTeX</a> (optional, if you want to use LaTeX)</p></li>
-<li><p><a class="reference external" href="https://pango.org">Pango</a> (only for Linux)</p></li>
+<li><p><a class="reference external" href="https://www.opengl.org//">OpenGL</a> (包含在python包 <code class="docutils literal notranslate"><span class="pre">PyOpenGL</span></code> 中)</p></li>
+<li><p><a class="reference external" href="https://www.latex-project.org">LaTeX</a> (可选，如果需要LaTeX则必需)</p></li>
+<li><p><a class="reference external" href="https://pango.org">Pango</a> (只有Linux系统需要，可选，如果需要使用manim的 <code class="docutils literal notranslate"><span class="pre">Text</span></code> 则必需)</p></li>
 </ul>
-<section id="directly">
-<h2>Directly<a class="headerlink" href="#directly" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install manimgl</span>
+<section id="id2">
+<h2>直接安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过pip安装manimgl</span>
 pip install manimgl
 
-<span class="c1"># Try it out</span>
+<span class="c1"># 测试一下</span>
 manimgl
 </pre></div>
 </div>
-<p>If you want to hack on manimlib itself, clone this repository and in
-that directory execute:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install python requirements</span>
+<p>如果你想要更改manimlib的源码并使用，或者使用最新版本，可以clone下这个存储库（不要下载zip）
+然后进入文件夹中执行：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装</span>
 pip install -e .
 
-<span class="c1"># Try it out</span>
+<span class="c1"># 测试</span>
 manimgl example_scenes.py OpeningManimExample
-<span class="c1"># or</span>
+<span class="c1"># 或</span>
 manim-render example_scenes.py OpeningManimExample
 </pre></div>
 </div>
-<p>If you run the above command and no error message appears,
-then you have successfully installed all the environments required by manim.</p>
+<p>如果你运行了上面这条命令，并且没有任何报错信息出现，那么你就已经安装好了manim所需的全部环境。</p>
 </section>
-<section id="directly-windows">
-<h2>Directly (Windows)<a class="headerlink" href="#directly-windows" title="Permalink to this headline">¶</a></h2>
+<section id="windows">
+<h2>直接安装 (Windows)<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://www.wikihow.com/Install-FFmpeg-on-Windows">Install
-FFmpeg</a>, and make sure that its path is in the PATH environment variable.</p></li>
-<li><p>Install a LaTeX distribution.
-<a class="reference external" href="http://tug.org/texlive/">TeXLive-full</a> is recommended.</p></li>
-<li><p>Install the remaining Python packages.</p></li>
+<li><p>安装 <a class="reference external" href="https://www.wikihow.com/Install-FFmpeg-on-Windows">FFmpeg</a>, 并且保证它在 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 环境变量中</p></li>
+<li><p>安装一个LaTeX发行版，推荐 <a class="reference external" href="http://tug.org/texlive/">TeXLive-full</a></p></li>
+<li><p>安装剩余的python依赖包</p></li>
 </ol>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/3b1b/manim.git
 <span class="nb">cd</span> manim
@@ -170,11 +248,11 @@ manimgl example_scenes.py OpeningManimExample
 </pre></div>
 </div>
 </section>
-<section id="for-anaconda">
-<h2>For Anaconda<a class="headerlink" href="#for-anaconda" title="Permalink to this headline">¶</a></h2>
+<section id="anaconda">
+<h2>使用Anaconda<a class="headerlink" href="#anaconda" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>Install FFmpeg and LaTeX as above.</p></li>
-<li><p>Create a conda environment using</p></li>
+<li><p>同上安装FFmpeg和LaTeX</p></li>
+<li><p>创建一个新的conda环境：</p></li>
 </ul>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/3b1b/manim.git
 <span class="nb">cd</span> manim
@@ -195,7 +273,7 @@ pip install -e .
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Quick Start</div>
+                <div class="title">快速入门</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -213,7 +291,7 @@ pip install -e .
         </div>
 
         <div class="related-information">
-          <span class="copyright">Copyright &copy; - This document has been placed in the public domain.</span> |
+          <span class="copyright">版权所有 &copy; 2020-2021 Manim Kindergarten Team</span> |
           Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
           <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
@@ -227,15 +305,15 @@ pip install -e .
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            目录
           </span>
         </div>
         <div class="toc-tree">
           <ul>
-<li><a class="reference internal" href="#">Installation</a><ul>
-<li><a class="reference internal" href="#directly">Directly</a></li>
-<li><a class="reference internal" href="#directly-windows">Directly (Windows)</a></li>
-<li><a class="reference internal" href="#for-anaconda">For Anaconda</a></li>
+<li><a class="reference internal" href="#">安装指南</a><ul>
+<li><a class="reference internal" href="#id2">直接安装</a></li>
+<li><a class="reference internal" href="#windows">直接安装 (Windows)</a></li>
+<li><a class="reference internal" href="#anaconda">使用Anaconda</a></li>
 </ul>
 </li>
 </ul>
