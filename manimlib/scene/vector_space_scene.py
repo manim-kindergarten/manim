@@ -25,10 +25,13 @@ from manimlib.mobject.svg.tex_mobject import TextMobject
 from manimlib.mobject.types.vectorized_mobject import VGroup
 from manimlib.mobject.types.vectorized_mobject import VMobject
 from manimlib.scene.scene import Scene
+from manimlib.scene.three_d_scene import ThreeDScene
 from manimlib.utils.rate_functions import rush_from
 from manimlib.utils.rate_functions import rush_into
 from manimlib.utils.space_ops import angle_of_vector
 from manimlib.utils.space_ops import get_norm
+from manimlib.camera.three_d_camera import ThreeDCamera
+from manimlib.mobject.coordinate_systems import ThreeDAxes
 
 X_COLOR = GREEN_C
 Y_COLOR = RED_C
@@ -1058,3 +1061,127 @@ class LinearTransformationScene(VectorScene):
             for f_mob in self.foreground_mobjects
         ] + added_anims
         self.play(*anims, **kwargs)
+
+
+class LinearTransformationScene3D(ThreeDScene, LinearTransformationScene):
+    """
+     This a 3D scene, and it contains special methods that make
+     it especially suitable for showing Linear Transformations.
+    """
+    CONFIG = {
+        "camera_class": ThreeDCamera,
+        "ambient_camera_rotation": None,
+        "default_angled_camera_orientation_kwargs": {
+            "phi": 70 * DEGREES,
+            "theta": -135 * DEGREES,
+        },
+        "include_background_plane": True,
+        "include_foreground_plane": True,
+        "foreground_plane_kwargs": {
+            "x_max": FRAME_WIDTH / 2,
+            "x_min": -FRAME_WIDTH / 2,
+            "y_max": FRAME_WIDTH / 2,
+            "y_min": -FRAME_WIDTH / 2,
+            "faded_line_ratio": 0
+        },
+        "background_plane_kwargs": {
+            "color": GREY,
+            "axis_config": {
+                "stroke_color": LIGHT_GREY,
+            },
+            "axis_config": {
+                "color": GREY,
+            },
+            "background_line_style": {
+                "stroke_color": GREY,
+                "stroke_width": 1,
+            },
+        },
+        "show_coordinates": False,
+        "show_basis_vectors": True,
+        "basis_vector_stroke_width": 6,
+        "i_hat_color": X_COLOR,
+        "j_hat_color": Y_COLOR,
+        "k_hat_color": Z_COLOR,
+        "leave_ghost_vectors": False,
+        "t_matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+    }
+
+    def setup(self):
+        if hasattr(self, "has_already_setup"):
+            return
+        self.has_already_setup = True
+        self.background_mobjects = []
+        self.foreground_mobjects = []
+        self.transformable_mobjects = []
+        self.moving_vectors = []
+        self.transformable_labels = []
+        self.moving_mobjects = []
+
+        self.t_matrix = np.array(self.t_matrix)
+        self.background_plane = ThreeDAxes()
+
+        if self.show_coordinates:
+            self.background_plane.add_coordinates()
+        if self.include_background_plane:
+            self.add_background_mobject(self.background_plane)
+        if self.include_foreground_plane:
+            self.plane = ThreeDAxes()
+            self.add_transformable_mobject(self.plane)
+        if self.show_basis_vectors:
+            self.basis_vectors = self.get_basis_vectors(
+                i_hat_color=self.i_hat_color,
+                j_hat_color=self.j_hat_color,
+                k_hat_color=self.k_hat_color,
+            )
+            self.moving_vectors += list(self.basis_vectors)
+            self.i_hat, self.j_hat, self.k_hat = self.basis_vectors
+            self.add(self.basis_vectors)
+
+        self.set_camera_orientation(**self.default_angled_camera_orientation_kwargs)
+
+    def get_basis_vectors(self, i_hat_color=X_COLOR, j_hat_color=Y_COLOR, k_hat_color=Z_COLOR):
+        """
+        Returns a VGroup of the Basis Vectors (1,0,0)、(0,1,0) and (0,0,1)
+
+        Parameters
+        ----------
+        i_hat_color (str)
+            The hex colour to use for the basis vector in the x direction
+
+        j_hat_color (str)
+            The hex colour to use for the basis vector in the z direction
+
+        k_hat_color (str)
+            The hex colour to use for the basis vector in the y direction
+        Returns
+        -------
+        VGroup
+            VGroup of the Vector Mobjects representing the basis vectors.
+        """
+        return VGroup(*[
+            Vector(
+                vect,
+                color=color,
+                stroke_width=self.basis_vector_stroke_width
+            )
+            for vect, color in [
+                ([1, 0, 0], i_hat_color),
+                ([0, 1, 0], j_hat_color),
+                ([0, 0, 1], k_hat_color),
+            ]
+        ])
+
+    def get_transposed_matrix_transformation(self, transposed_matrix):
+        """
+        Returns a function corresponding to the linear
+        transformation represented by the transposed
+        matrix passed.
+
+        Parameters
+        ----------
+        matrix (np.ndarray, list, tuple)
+            The matrix.
+        """
+        transposed_matrix = np.array(transposed_matrix)
+        return lambda point: np.dot(point, transposed_matrix)
