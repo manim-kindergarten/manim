@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?4e1e13547352f7508d996d1a">
-    <link rel="stylesheet" href="../../_static/pygments.css?4e1e13547352f7508d996d1a">
+    <link rel="stylesheet" href="../../_static/styles/default.css?59cc1b2ce3b338929c77b6f7">
+    <link rel="stylesheet" href="../../_static/pygments.css?59cc1b2ce3b338929c77b6f7">
     
 <style>
   :root {
@@ -28,7 +28,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?4e1e13547352f7508d996d1a"></script></head>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?59cc1b2ce3b338929c77b6f7"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -138,6 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="svg/text_mobject.html">Text</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="boolean_ops.html">BooleanOps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changing.html">Changing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinate_systems.html">CoordinateSystems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frame.html">Frame</a></li>
@@ -371,6 +372,33 @@
 <p>其中，opacity, width 等属性均可以为一个列表，在渲染时会按照列表对其进行补间</p>
 </dd></dl>
 </div>
+<div class="section" id="dodecahedron">
+<h2>Dodecahedron<a class="headerlink" href="#dodecahedron" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="manimlib.mobject.three_dimensions.Dodecahedron">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.three_dimensions.</code><code class="sig-name descname">Dodecahedron</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">vmobjects</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.three_dimensions.Dodecahedron" title="永久链接至目标">¶</a></dt>
+<dd><p>十二面体</p>
+<p>初始化样式，VMobject 的样式有以下</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fill</span></code> 填充样式</p>
+<ul>
+<li><p>颜色: <code class="docutils literal notranslate"><span class="pre">fill_color</span></code> 或 <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p>不透明度: <code class="docutils literal notranslate"><span class="pre">fill_opacity</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stroke</span></code> 线条样式</p>
+<ul>
+<li><p>颜色: <code class="docutils literal notranslate"><span class="pre">stroke_color</span></code> 或 <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p>宽度: <code class="docutils literal notranslate"><span class="pre">stroke_width</span></code></p></li>
+<li><p>不透明度: <code class="docutils literal notranslate"><span class="pre">stroke_opacity</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gloss</span></code> 光泽</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shadow</span></code> 阴影</p></li>
+</ul>
+<p>其中，opacity, width 等属性均可以为一个列表，在渲染时会按照列表对其进行补间</p>
+</dd></dl>
+</div>
 <div class="section" id="prism">
 <h2>Prism<a class="headerlink" href="#prism" title="永久链接至标题">¶</a></h2>
 <dl class="py class">
@@ -447,6 +475,7 @@
 <li><a class="reference internal" href="#square3d">Square3D</a></li>
 <li><a class="reference internal" href="#cube">Cube</a></li>
 <li><a class="reference internal" href="#vcube">VCube</a></li>
+<li><a class="reference internal" href="#dodecahedron">Dodecahedron</a></li>
 <li><a class="reference internal" href="#prism">Prism</a></li>
 </ul>
 </li>
