@@ -13,29 +13,18 @@ Homotopy
     :members:
     
 .. manim-example:: HomotopyExample
-  :media: https://fastly.jsdelivr.net/gh/manim-kindergarten/CDN@master/manimgl_assets/animations/movement/HomotopyExample.mp4
+  :media: ../../_static/HomotopyExample.mp4
 
   class HomotopyExample(Scene):
       def construct(self):
-          def plane_wave_homotopy(x, y, z, t):
-              norm = get_norm([x, y])
-              tau = interpolate(5, -5, t) + norm/FRAME_X_RADIUS
-              alpha = sigmoid(tau)
-              return [x, y + 0.5*np.sin(2*np.pi*alpha)-t*SMALL_BUFF/2, z]
+          def homotopy_fun(x, y, z, t):
+              return [x * t, y * t, z]
 
-          mobjects = VGroup(
-              Text("Text").scale(3),
-              Square(),
-          ).arrange(RIGHT, buff=2)
+          mob = Square()
+          self.add(mob)
+          self.play(Homotopy(homotopy_fun, mob))
+          self.wait()
 
-          self.add(mobjects)
-          self.play(
-              *[Homotopy(
-                  plane_wave_homotopy,
-                  mob
-              ) for mob in mobjects]
-          )
-          self.wait(0.3)
 
 ComplexHomotopy
 ***********************

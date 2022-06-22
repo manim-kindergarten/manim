@@ -26,8 +26,13 @@ class Homotopy(Animation):
         **kwargs
     ):
         """
-        Homotopy is a function from
-        (x, y, z, t) to (x', y', z')
+        homotopy 是一个从 (x, y, z, t) 到 (x', y', z') 的函数。
+        t 的取值范围是 [0, 1]，
+        让 mobject 根据 homotopy 计算的每个点坐标进行变换。
+        例子中 t = 0 时 mob 是边长为 0 的正方形，
+        t = 1 时是边长为 2 的正方形。
+        与 Transform 类似，区别在于 Transform 锚点运动轨迹是直线，
+        Homotopy 锚点运动轨迹是根据传入的 homotopy 计算的。
         """
         self.homotopy = homotopy
         super().__init__(mobject, **kwargs)
@@ -65,9 +70,7 @@ class ComplexHomotopy(Homotopy):
         **kwargs
     ):
         """
-        Given a function form (z, t) -> w, where z and w
-        are complex numbers and t is time, this animates
-        the state over time
+        继承自 Homotopy。与 Homotopy 类似，就是用复数描述坐标。
         """
         def homotopy(x, y, z, t):
             c = complex_homotopy(complex(x, y), t)
