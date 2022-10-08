@@ -261,7 +261,7 @@ class Mobject(object):
     def get_bounding_box(self) -> np.ndarray:
         '''获取物件的矩形包围框（碰撞箱）
         
-        包含三个元素，分别为左上，中心，右下
+        包含三个元素，分别为左下，中心，右上
         '''
         if self.needs_new_bounding_box:
             self.data["bounding_box"] = self.compute_bounding_box()
