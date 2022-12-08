@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?ff86b00b7908bb4406727aeb">
-    <link rel="stylesheet" href="../../_static/pygments.css?ff86b00b7908bb4406727aeb">
+    <link rel="stylesheet" href="../../_static/styles/default.css?e99043d63fcef78bc2efcc9b">
+    <link rel="stylesheet" href="../../_static/pygments.css?e99043d63fcef78bc2efcc9b">
     
 <style>
   :root {
@@ -28,7 +28,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?ff86b00b7908bb4406727aeb"></script></head>
+        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?e99043d63fcef78bc2efcc9b"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -258,9 +258,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestGlsl</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-        <span class="n">square</span><span class="o">.</span><span class="n">set_color_by_code</span><span class="p">(</span><span class="n">f</span><span class="s2">"""</span>
-<span class="s2">            vec3 blue = vec3{tuple(hex_to_rgb(BLUE))};</span>
-<span class="s2">            vec3 red = vec3{tuple(hex_to_rgb(RED))};</span>
+        <span class="n">square</span><span class="o">.</span><span class="n">set_color_by_code</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">            vec3 blue = vec3</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="n">BLUE</span><span class="p">))</span><span class="si">}</span><span class="s2">;</span>
+<span class="s2">            vec3 red = vec3</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="n">RED</span><span class="p">))</span><span class="si">}</span><span class="s2">;</span>
 <span class="s2">            color.rgb = mix(blue, red, (point.x + 1.5) / 3);</span>
 <span class="s2">        """</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>

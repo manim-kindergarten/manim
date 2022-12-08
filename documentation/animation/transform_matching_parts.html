@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?0188e95efc3e035100f3f305">
-    <link rel="stylesheet" href="../../_static/pygments.css?0188e95efc3e035100f3f305">
+    <link rel="stylesheet" href="../../_static/styles/default.css?b05ac038023e7549e7d20787">
+    <link rel="stylesheet" href="../../_static/pygments.css?b05ac038023e7549e7d20787">
     
 <style>
   :root {
@@ -28,7 +28,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?0188e95efc3e035100f3f305"></script></head>
+        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?b05ac038023e7549e7d20787"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -268,32 +268,32 @@
     <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">"isolate"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"</span><span class="se">\\</span><span class="s2">int_{0}^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm{e}^{- t}"</span><span class="p">,</span>
-                <span class="s2">"</span><span class="se">\\</span><span class="s2">mathrm{d} t"</span><span class="p">,</span>
-                <span class="s2">"c_{0}"</span><span class="p">,</span>
-                <span class="s2">"c_{1} t"</span><span class="p">,</span>
-                <span class="s2">"c_{2} t^{2}"</span><span class="p">,</span>
-                <span class="s2">"c_{n} t^{n}"</span>
+                <span class="s2">"</span><span class="se">\\</span><span class="s2">int_</span><span class="si">{0}</span><span class="s2">^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">^{- t}"</span><span class="p">,</span>
+                <span class="s2">"</span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{d}</span><span class="s2"> t"</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{0}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{1}</span><span class="s2"> t"</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{2}</span><span class="s2"> t^</span><span class="si">{2}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{n}</span><span class="s2"> t^</span><span class="si">{n}</span><span class="s2">"</span>
             <span class="p">],</span>
             <span class="s2">"tex_to_color_map"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">"</span><span class="se">\\</span><span class="s2">mathrm{e}"</span><span class="p">:</span> <span class="n">MAROON_A</span><span class="p">,</span>
-                <span class="s2">"c_{0}"</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
-                <span class="s2">"c_{1}"</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
-                <span class="s2">"c_{2}"</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
-                <span class="s2">"c_{n}"</span><span class="p">:</span> <span class="n">BLUE</span>
+                <span class="s2">"</span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">"</span><span class="p">:</span> <span class="n">MAROON_A</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{0}</span><span class="s2">"</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{1}</span><span class="s2">"</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{2}</span><span class="s2">"</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+                <span class="s2">"c_</span><span class="si">{n}</span><span class="s2">"</span><span class="p">:</span> <span class="n">BLUE</span>
             <span class="p">}</span>
         <span class="p">}</span>
         <span class="n">explicit_formula</span> <span class="o">=</span> <span class="n">MTex</span><span class="p">(</span>
-            <span class="s2">"</span><span class="se">\\</span><span class="s2">int_{0}^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm{e}^{- t}"</span>
-            <span class="s2">" </span><span class="se">\\</span><span class="s2">left( c_{0} + c_{1} t + c_{2} t^{2} + </span><span class="se">\\</span><span class="s2">cdots + c_{n} t^{n} </span><span class="se">\\</span><span class="s2">right) </span><span class="se">\\</span><span class="s2">mathrm{d} t"</span><span class="p">,</span>
+            <span class="s2">"</span><span class="se">\\</span><span class="s2">int_</span><span class="si">{0}</span><span class="s2">^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">^{- t}"</span>
+            <span class="s2">" </span><span class="se">\\</span><span class="s2">left( c_</span><span class="si">{0}</span><span class="s2"> + c_</span><span class="si">{1}</span><span class="s2"> t + c_</span><span class="si">{2}</span><span class="s2"> t^</span><span class="si">{2}</span><span class="s2"> + </span><span class="se">\\</span><span class="s2">cdots + c_</span><span class="si">{n}</span><span class="s2"> t^</span><span class="si">{n}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">right) </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{d}</span><span class="s2"> t"</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kw</span>
         <span class="p">)</span>
         <span class="n">expanded_formula</span> <span class="o">=</span> <span class="n">MTex</span><span class="p">(</span>
-            <span class="s2">"</span><span class="se">\\</span><span class="s2">int_{0}^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm{e}^{- t} c_{0} </span><span class="se">\\</span><span class="s2">mathrm{d} t"</span>
-            <span class="s2">" + </span><span class="se">\\</span><span class="s2">int_{0}^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm{e}^{- t} c_{1} t </span><span class="se">\\</span><span class="s2">mathrm{d} t"</span>
-            <span class="s2">" + </span><span class="se">\\</span><span class="s2">int_{0}^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm{e}^{- t} c_{2} t^{2} </span><span class="se">\\</span><span class="s2">mathrm{d} t"</span>
+            <span class="s2">"</span><span class="se">\\</span><span class="s2">int_</span><span class="si">{0}</span><span class="s2">^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">^{- t} c_</span><span class="si">{0}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{d}</span><span class="s2"> t"</span>
+            <span class="s2">" + </span><span class="se">\\</span><span class="s2">int_</span><span class="si">{0}</span><span class="s2">^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">^{- t} c_</span><span class="si">{1}</span><span class="s2"> t </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{d}</span><span class="s2"> t"</span>
+            <span class="s2">" + </span><span class="se">\\</span><span class="s2">int_</span><span class="si">{0}</span><span class="s2">^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">^{- t} c_</span><span class="si">{2}</span><span class="s2"> t^</span><span class="si">{2}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{d}</span><span class="s2"> t"</span>
             <span class="s2">" + </span><span class="se">\\</span><span class="s2">cdots"</span>
-            <span class="s2">" + </span><span class="se">\\</span><span class="s2">int_{0}^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm{e}^{- t} c_{n} t^{n} </span><span class="se">\\</span><span class="s2">mathrm{d} t"</span><span class="p">,</span>
+            <span class="s2">" + </span><span class="se">\\</span><span class="s2">int_</span><span class="si">{0}</span><span class="s2">^{</span><span class="se">\\</span><span class="s2">infty} </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{e}</span><span class="s2">^{- t} c_</span><span class="si">{n}</span><span class="s2"> t^</span><span class="si">{n}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">mathrm</span><span class="si">{d}</span><span class="s2"> t"</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kw</span>
         <span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">explicit_formula</span><span class="p">)</span>

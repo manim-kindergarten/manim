@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?f5b0475e7524a5e651038474">
-    <link rel="stylesheet" href="../../_static/pygments.css?f5b0475e7524a5e651038474">
+    <link rel="stylesheet" href="../../_static/styles/default.css?7aa72074e9a02febc0041d8d">
+    <link rel="stylesheet" href="../../_static/pygments.css?7aa72074e9a02febc0041d8d">
     
 <style>
   :root {
@@ -28,7 +28,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?f5b0475e7524a5e651038474"></script></head>
+        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?7aa72074e9a02febc0041d8d"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -265,18 +265,18 @@
 <div class="section" id="sdf">
 <h3>sdf 符号距离函数<a class="headerlink" href="#sdf" title="永久链接至标题">¶</a></h3>
 <p>对一个圆上色，我们可能会这么考虑：当半径小于等于 radius 时，就对它上色，其他不上色。此时，也就有了伪代码</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 圆内着色</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// 圆外不着色</span>
-<span class="p">}</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 圆内着色</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 圆外不着色</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>但是当有更加复杂的图形时，这样就会形成相当复杂的 if-else 树，这样不仅代码不美观，性能上也较差。因此我们寻求更加高效的方案：sdf</p>
 <p>同样是画圆，我们这样定义</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="nf">sdfCircle</span><span class="p">(</span><span class="n">vec2</span> <span class="n">point</span><span class="p">,</span> <span class="kt">float</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">radius</span> <span class="o">-</span> <span class="n">length</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="nf">sdfCircle</span><span class="p">(</span><span class="n">vec2</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>此时我们仔细分析一下</p>
@@ -286,11 +286,11 @@
 <li><p>在圆外的点，返回值均小于 0</p></li>
 </ul>
 <p>此时， 0 就成了一个分界点，我们可以使用一些其他的函数来进一步处理，即可得到理想的效果了。我们使用上面提到的 smoothstep 函数</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="n">smoothstep</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">sdfCircle</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">smoothstep</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w"> </span><span class="n">sdfCircle</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
 <p>这一步得到 <code class="docutils literal notranslate"><span class="pre">f</span></code> ，它的结果为：当点在圆内，则返回 1 ，在圆外，则返回 0，可以得到一个近似的圆的坐标集</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">mix</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">),</span> <span class="n">f</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mix</span><span class="p">(</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>这一步中，将原有的片段颜色和圆的颜色（黄色）混合，混合的依据就是 <code class="docutils literal notranslate"><span class="pre">f</span></code>，值为 0 的像素，使用原有的颜色，值为 1 的像素，使用圆的颜色。</p>

@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/custom.css" />
     <link rel="stylesheet" href="https://mkcdn.tonycrane.cc/manimgl_assets/colors.css" />
-    <link rel="stylesheet" href="../../_static/styles/default.css?c628a9cb0e6720ebff9d4953">
-    <link rel="stylesheet" href="../../_static/pygments.css?c628a9cb0e6720ebff9d4953">
+    <link rel="stylesheet" href="../../_static/styles/default.css?fe83cb9f45ba21c72da15c93">
+    <link rel="stylesheet" href="../../_static/pygments.css?fe83cb9f45ba21c72da15c93">
     
 <style>
   :root {
@@ -28,7 +28,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?c628a9cb0e6720ebff9d4953"></script></head>
+        <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../_static/scripts/main.js?fe83cb9f45ba21c72da15c93"></script></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -292,7 +292,7 @@
                                       <span class="n">magnitude_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
                                       <span class="n">vector_opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
                                       <span class="n">vector_thickness</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>
-                                      <span class="n">color_by_magnitude</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                      <span class="n">color_by_magnitude</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                       <span class="n">line_color</span><span class="o">=</span><span class="n">GREY_A</span><span class="p">,</span>
                                       <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                                       <span class="n">line_opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
@@ -334,7 +334,7 @@
 <span class="k">class</span> <span class="nc">FuncFlow</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
     <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">"field_config"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"color_by_magnitude"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s2">"color_by_magnitude"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s2">"magnitude_range"</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
             <span class="s2">"arc_len"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="p">},</span>
@@ -362,12 +362,12 @@
             <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">field_config</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="n">func_label</span> <span class="o">=</span> <span class="n">Tex</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">begin{cases} </span><span class="se">\</span>
+        <span class="n">func_label</span> <span class="o">=</span> <span class="n">Tex</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">begin</span><span class="si">{cases}</span><span class="s2"> </span><span class="se">\</span>
 <span class="s2">            x = x + y </span><span class="se">\\\\</span><span class="s2"> </span><span class="se">\</span>
 <span class="s2">            y = x - y </span><span class="se">\</span>
-<span class="s2">            </span><span class="se">\\</span><span class="s2">end{cases}"</span><span class="p">)</span>
+<span class="s2">            </span><span class="se">\\</span><span class="s2">end</span><span class="si">{cases}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">func_label</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">UR</span><span class="p">)</span>
-        <span class="n">func_label</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">BLACK</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">func_label</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">BLACK</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">plane</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vector_field</span><span class="p">)</span>
