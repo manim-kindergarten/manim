@@ -100,7 +100,7 @@
             )
             self.wait()
 
-这个场景中新出现的用法是``.get_grid()`` 和 ``self.play(mob.animate.method(args))``:
+这个场景中新出现的用法是 ``.get_grid()`` 和 ``self.play(mob.animate.method(args))``:
 
 - ``.get_grid()`` 方法会返回一个由该物体复制得到的阵列
 - ``self.play(mob.animate.method(args))`` 动画化方法，详细用法在上面代码注释中说明了
