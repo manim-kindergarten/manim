@@ -84,7 +84,9 @@ Linux (以 Ubuntu 为例)
    pip install -e .
 
    # 配置运行参数，可选
-   manimgl --config  # 如果想要在 LaTeX 中使用中文，请选择 xelatex 选项
+   # 如果想要在 LaTeX 中使用中文，请选择 ctex 选项 
+   # 注意在最新版本中 xelatex(模板名) 更名为 ctex
+   manimgl --config  
 
    # 测试
    manimgl example_scenes.py OpeningManimExample
@@ -107,3 +109,7 @@ Linux (以 Ubuntu 为例)
    conda create -n manim python=3.8
    conda activate manim
    pip install -e .
+   # 配置运行参数，可选
+   # 如果想要在 LaTeX 中使用中文，请选择 ctex 选项 
+   # 注意在最新版本中 xelatex(模板名) 更名为 ctex
+   manimgl --config  
